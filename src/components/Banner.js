@@ -55,7 +55,7 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to my Portfolio</span>
+                <span className="tagline">Welcome to World of Astra</span>
                 <h1>{`Hi! I'm Prem Basnet`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Information Security Auditor", "GRC Analyst"]'><span className="wrap">{text}</span></span></h1>
                   <p>Prem is an experienced cybersecurity engineer and information systems auditor with over 7 years of experience helping organizations protect their critical systems and data. He specializes in performing security audits, vulnerability assessments, and leading security initiatives.</p>
                   <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
