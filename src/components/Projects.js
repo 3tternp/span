@@ -67,6 +67,9 @@ export const Projects = () => {
                     <Tab.Pane eventKey="section">
                       <p>As a cyber security practitioner I have involved in lots of technical audit prespective including Network and Server side Vulnerability Assessment and Penetration Testing</p>
                     </Tab.Pane>
+                    <Tab.Pane eventKey="second">
+                      <p>As a GRC Analyst I have involved in readiness of various Compliance like HIPAA, CCPA, GDPR, ISO/IEC 27001, SOC2.</p>
+                    </Tab.Pane>
                     <Tab.Pane eventKey="third">
                       <p>As a GRC Analyst I have involved in readiness of various Compliance like HIPAA, CCPA, GDPR, ISO/IEC 27001, SOC2.</p>
                     </Tab.Pane>
