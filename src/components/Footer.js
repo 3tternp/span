@@ -1,28 +1,69 @@
-import { Container, Row, Col } from "react-bootstrap";
-import logo from "../assets/img/logo.png";
-import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon2 from "../assets/img/nav-icon2.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
-
-export const Footer = () => {
-  return (
-    <footer className="footer">
-      <Container>
-        <Row className="align-items-center">
-          <MailchimpForm />
-          <Col size={12} sm={6}>
-            <img src={logo} alt="Logo" />
-          </Col>
-          <Col size={12} sm={6} className="text-center text-sm-end">
-            <div className="social-icon">
-              <a href="https://www.linkedin.com/in/prem-basnet524/"><img src={navIcon1} alt="Icon" /></a>
-              <a href="https://www.facebook.com/profile.php?id=100051820911738"><img src={navIcon2} alt="Icon" /></a>
-              <a href="https://www.instagram.com/astra.x3/"><img src={navIcon3} alt="Icon" /></a>
-            </div>
-            <p>Copyright 2024. All Rights Reserved</p>
-          </Col>
-        </Row>
-      </Container>
-    </footer>
-  )
-}
+import React from "react";
+import {
+    Box,
+    FooterContainer,
+    Row,
+    Column,
+    FooterLink,
+    Heading,
+} from "./FooterStyles";
+ 
+const Footer = () => {
+    return (
+ 
+            <FooterContainer>
+                <Row>
+  
+                    <Column>
+                        <Heading>Social Media</Heading>
+                        <FooterLink href="https://www.facebook.com/profile.php?id=100051820911738">
+                            <i className="fab fa-facebook-f">
+                                <span
+                                    style={{
+                                        marginLeft: "10px",
+                                    }}
+                                >
+                                    Facebook
+                                </span>
+                            </i>
+                        </FooterLink>
+                        <FooterLink href="https://www.instagram.com/astra.x3/">
+                            <i className="fab fa-instagram">
+                                <span
+                                    style={{
+                                        marginLeft: "10px",
+                                    }}
+                                >
+                                    Instagram
+                                </span>
+                            </i>
+                        </FooterLink>
+                        <FooterLink href="https://twitter.com/astra524">
+                            <i className="fab fa-twitter">
+                                <span
+                                    style={{
+                                        marginLeft: "10px",
+                                    }}
+                                >
+                                    Twitter
+                                </span>
+                            </i>
+                        </FooterLink>
+                        <FooterLink href="https://www.youtube.com/channel/UCOx8z4HZ4MEf-Wkx_f4JP9Q">
+                            <i className="fab fa-youtube">
+                                <span
+                                    style={{
+                                        marginLeft: "10px",
+                                    }}
+                                >
+                                    Youtube
+                                </span>
+                            </i>
+                        </FooterLink>
+                    </Column>
+                </Row>
+            </FooterContainer>
+        </Box>
+    );
+};
+export default Footer;
