@@ -11,7 +11,7 @@ import {
 const Footer = () => {
     return (
  
-            <FooterContainer>
+            <Footer>
                 <Row>
   
                     <Column>
@@ -62,7 +62,7 @@ const Footer = () => {
                         </FooterLink>
                     </Column>
                 </Row>
-            </FooterContainer>
+            </Footer>
         </Box>
     );
 };
