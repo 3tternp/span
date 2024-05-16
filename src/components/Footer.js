@@ -1,3 +1,11 @@
+import {
+    Box,
+    FooterContainer,
+    Row,
+    Column,
+    FooterLink,
+    Heading,
+} from "./FooterStyles";
 
 export const Footer = () => {
     return (
