@@ -1,4 +1,5 @@
-const Footer = () => {
+
+export const Footer = () => {
     return (
       <Box>
       <Footer>
