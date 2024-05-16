@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css'; // Import your CSS file for styling
 
-function Footer() {
+export const Banner = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
