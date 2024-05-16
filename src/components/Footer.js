@@ -1,12 +1,4 @@
 import React from "react";
-import {
-    Box,
-    FooterContainer,
-    Row,
-    Column,
-    FooterLink,
-    Heading,
-} from "./FooterStyles";
  
 const Footer = () => {
     return (
