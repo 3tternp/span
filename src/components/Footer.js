@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { HashLink } from 'react-router-hash-link';
+//import { HashLink } from 'react-router-hash-link';
 import logo from '../assets/img/logo.png';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
@@ -8,7 +8,7 @@ import navIcon3 from '../assets/img/nav-icon3.svg';
 import './Footer.css'; // Import your CSS file for styling
 
 //export const Footer = () => {
-export const Footer = ({ activeLink, onUpdateActiveLink }) => {
+export const Footer = ({  }) => {
   return (
     <footer className="footer">
       <div className="footer-container">
