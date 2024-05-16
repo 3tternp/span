@@ -9,8 +9,6 @@ export const Banner = () => {
           <h3>Company Name</h3>
           <p>About Us</p>
           <p>Contact Us</p>
-          <p>Terms of Service</p>
-          <p>Privacy Policy</p>
         </div>
         <div className="footer-right">
           <h3>Connect with Us</h3>
