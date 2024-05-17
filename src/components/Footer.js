@@ -6,7 +6,6 @@ export const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-left">
-          </ul>
         </div>
       </div>
       <div className="footer-bottom">
