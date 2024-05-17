@@ -6,10 +6,10 @@ export const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-left">
-          <h3>Company Name</h3>
+          <h3>Astra</h3>
         </div>
         <div className="footer-right">
-          <h3>Connect with Us</h3>
+          <h3>Let's Connect</h3>
           <ul className="social-icons">
             <li><a href="#"><i className="fab fa-facebook"></i></a></li>
             <li><a href="#"><i className="fab fa-twitter"></i></a></li>
