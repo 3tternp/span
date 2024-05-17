@@ -9,12 +9,16 @@ export const Footer = () => {
           <h3>Astra</h3>
         </div>
         <div className="footer-right">
-         <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
-          <ul className="social-icons">
-            <li><a href="#"><i className="fab fa-facebook"></i></a></li>
-            <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i className="fab fa-instagram"></i></a></li>
-            <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
+                    <span className="navbar-text">
+              <div className="social-icon">
+                <a href="https://www.linkedin.com/in/prem-basnet524/"><img src={navIcon1} alt="" /></a>
+                <a href="https://www.facebook.com/profile.php?id=100051820911738"><img src={navIcon2} alt="" /></a>
+                <a href="https://www.instagram.com/astra.x3/"><img src={navIcon3} alt="" /></a>
+              </div>
+              <HashLink to='#connect'>
+                <button className="vvd"><span>Let’s Connect</span></button>
+              </HashLink>
+            </span>
           </ul>
         </div>
       </div>
