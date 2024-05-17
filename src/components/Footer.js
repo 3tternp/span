@@ -9,7 +9,7 @@ export const Footer = () => {
           <h3>Astra</h3>
         </div>
         <div className="footer-right">
-          <h3>Let's Connect</h3>
+         <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
           <ul className="social-icons">
             <li><a href="#"><i className="fab fa-facebook"></i></a></li>
             <li><a href="#"><i className="fab fa-twitter"></i></a></li>
