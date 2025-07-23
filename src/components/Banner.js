@@ -53,9 +53,8 @@ export const Banner = () => {
         <Row className="aligh-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
-              {({ isVisible }) =>
-              }
-              <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
+              {({ isVisible }) => (
+                <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
                 <span className="tagline">✨ Welcome to World of Astra ✨</span>
                 <h1>{`Hi! I'm Prem Basnet`}</h1>
                 <h1><span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Information Security Auditor", "GRC Analyst", "Cybersecurity Expert", "Compliance Specialist"]'><span className="wrap">{text}</span></span></h1>
@@ -63,7 +62,8 @@ export const Banner = () => {
                   <button onClick={() => document.getElementById('projects').scrollIntoView({behavior: 'smooth'})}>
                     Explore My Work <ArrowRightCircle size={25} />
                   </button>
-              </div>}
+                </div>
+              )}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
@@ -71,7 +71,7 @@ export const Banner = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeInRight" : ""}>
                   <img src={headerImg} alt="Header Img"/>
-                </div>}
+                </div>
               }
             </TrackVisibility>
           </Col>
