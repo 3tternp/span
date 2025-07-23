@@ -26,6 +26,9 @@ export const Footer = () => {
                 <a href="https://www.instagram.com/astra.x3/" target="_blank" rel="noopener noreferrer">
                   Instagram
                 </a>
+                <a href="https://github.com/prembasnet" target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
               </div>
             </div>
           </Col>
