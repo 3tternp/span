@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+require('dotenv').config();
 
 // server used to send send emails
 const app = express();
@@ -9,14 +10,12 @@ app.use(cors());
 app.use(express.json());
 app.use("/", router);
 app.listen(5000, () => console.log("Server Running"));
-console.log(process.env.EMAIL_USER);
-console.log(process.env.EMAIL_PASS);
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: "basnetprem524@gmail.com",
-    pass: ""
+    pass: process.env.EMAIL_PASS || "your-app-password-here"
   },
 });
 
@@ -29,12 +28,13 @@ contactEmail.verify((error) => {
 });
 
 router.post("/contact", (req, res) => {
-  const name = req.body.firstName + req.body.lastName;
+  const name = req.body.firstName + " " + req.body.lastName;
   const email = req.body.email;
   const message = req.body.message;
   const phone = req.body.phone;
+  
   const mail = {
-    from: name,
+    from: "basnetprem524@gmail.com",
     to: "basnetprem524@gmail.com",
     subject: "Contact Form Submission - Portfolio",
     html: `<p>Name: ${name}</p>
@@ -42,10 +42,13 @@ router.post("/contact", (req, res) => {
            <p>Phone: ${phone}</p>
            <p>Message: ${message}</p>`,
   };
+  
   contactEmail.sendMail(mail, (error) => {
     if (error) {
-      res.json(error);
+      console.log("Email error:", error);
+      res.json({ code: 500, status: "Error sending message" });
     } else {
+      console.log("Email sent successfully");
       res.json({ code: 200, status: "Message Sent" });
     }
   });
