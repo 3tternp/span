@@ -54,6 +54,7 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
+              }
               <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
                 <span className="tagline">✨ Welcome to World of Astra ✨</span>
                 <h1>{`Hi! I'm Prem Basnet`}</h1>
@@ -71,6 +72,7 @@ export const Banner = () => {
                 <div className={isVisible ? "animate__animated animate__fadeInRight" : ""}>
                   <img src={headerImg} alt="Header Img"/>
                 </div>}
+              }
             </TrackVisibility>
           </Col>
         </Row>
