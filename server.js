@@ -1,60 +1,68 @@
 const express = require("express");
-const router = express.Router();
-const cors = require("cors");
 const nodemailer = require("nodemailer");
+const cors = require("cors");
+const router = express.Router();
+require("dotenv").config();
 
-// server used to send send emails
 const app = express();
-app.use(cors());
+
+// CORS - allow requests from all origins or restrict to frontend domain
+app.use(cors({ origin: "*" })); // Change "*" to "https://yourfrontend.com" if needed
 app.use(express.json());
 app.use("/", router);
-app.listen(5000, () => console.log("Server Running"));
-console.log("Server is running on port 5000");
 
+// PORT configuration
+const PORT = process.env.PORT || 3000;
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`✅ Server is running on public port ${PORT}`);
+});
+
+// Configure Nodemailer transport
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: "basnetprem524@gmail.com",
-    pass: "cann jhqd eqwn hlvy"
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   },
 });
 
+// Verify transport
 contactEmail.verify((error) => {
   if (error) {
-    console.log("Email configuration error:", error);
+    console.error("❌ Email transporter error:", error);
   } else {
-    console.log("Ready to Send");
+    console.log("📧 Email transporter ready");
   }
 });
 
+// POST /contact endpoint
 router.post("/contact", (req, res) => {
-  console.log("Received contact form submission:", req.body);
-  
-  const name = req.body.firstName + " " + req.body.lastName;
-  const email = req.body.email;
-  const message = req.body.message;
-  const phone = req.body.phone;
-  
-  const mail = {
-    from: name + " <basnetprem524@gmail.com>",
-    to: "basnetprem524@gmail.com",
-    subject: "Contact Form Submission - Portfolio",
-    html: `<p>Name: ${name}</p>
-           <p>Email: ${email}</p>
-           <p>Phone: ${phone}</p>
-           <p>Message: ${message}</p>`,
+  const { firstName, lastName, email, phone, message } = req.body;
+  const name = `${firstName} ${lastName}`;
+
+  const mailOptions = {
+    from: `${name} <${process.env.EMAIL_USER}>`,
+    to: process.env.EMAIL_USER,
+    subject: "📬 New Contact Form Submission",
+    html: `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Message:</strong><br/>${message}</p>
+    `,
   };
-  
-  console.log("Attempting to send email:", mail);
-  
-  contactEmail.sendMail(mail, (error) => {
+
+  console.log("📨 Contact form received:", req.body);
+
+  contactEmail.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log("Email error:", error);
-      res.json({ code: 500, status: "Error sending message" });
+      console.error("❌ Failed to send email:", error.message);
+      res.status(500).json({ status: "Failed to send message" });
     } else {
-      console.log("Email sent successfully");
-      res.json({ code: 200, status: "Message Sent" });
+      console.log("✅ Email sent:", info.response);
+      res.status(200).json({ status: "Message sent successfully" });
     }
   });
-}
-)
+});
