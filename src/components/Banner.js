@@ -10,7 +10,7 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const toRotate = [ "Information Security Professional", "GRC Analyst", "Compliance Specialist" ];
+  const toRotate = [ "Information Security Professional", "GRC Analyst", "Compliance Officer" ];
   const period = 2000;
 
   useEffect(() => {
@@ -52,8 +52,8 @@ export const Banner = () => {
                 <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
                 <span className="tagline">✨ Welcome to World of Astra ✨</span>
                 <h1>{`Hi! I'm Prem Basnet`}</h1>
-                <h1><span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Information Security Professional", "GRC Analyst", "Cybersecurity Expert", "Compliance Specialist"]'><span className="wrap">{text}</span></span></h1>
-                  <p>🛡️ An experienced cybersecurity engineer and information systems auditor with over 9 years of expertise in protecting critical systems and data. Specializing in security audits, vulnerability assessments, compliance frameworks, and leading innovative security initiatives that safeguard organizations against evolving cyber threats.</p>
+                <h1><span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Information Security Professional", "GRC Analyst", "Compliance Officer"]'><span className="wrap">{text}</span></span></h1>
+                  <p>🛡️ An experienced cybersecurity Professional with over 9 years of experience in protecting critical systems and data. Specializing in security audits, vulnerability assessments, compliance frameworks, and leading innovative security initiatives that safeguard organizations against evolving cyber threats.</p>
                   <button onClick={() => document.getElementById('projects').scrollIntoView({behavior: 'smooth'})}>
                     Explore My Work <ArrowRightCircle size={25} />
                   </button>
