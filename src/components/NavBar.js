@@ -55,7 +55,7 @@ export const NavBar = () => {
                 <a href="https://www.linkedin.com/in/prem-basnet524/"><img src={navIcon1} alt="" /></a>
                 <a href="https://www.facebook.com/profile.php?id=100051820911738"><img src={navIcon2} alt="" /></a>
                 <a href="https://www.instagram.com/astra.x3/"><img src={navIcon3} alt="" /></a>
-                <a href="https://github.com/prembasnet"><img src={navIcon4} alt="" /></a>
+                <a href="https://github.com/3tternp"><img src={navIcon4} alt="" /></a>
               </div>
               <HashLink to='#projects'>
                 <button className="vvd"><span>Let’s Connect</span></button>
