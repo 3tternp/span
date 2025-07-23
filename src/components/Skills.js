@@ -4,6 +4,7 @@ import meter3 from "../assets/img/meter3.svg";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../assets/img/background.jpg"
+import TrackVisibility from 'react-on-screen';
 
 export const Skills = () => {
   const responsive = {
@@ -30,28 +31,39 @@ export const Skills = () => {
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                    <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
-                        <p>Prem Basnet is skilled in multiple domains. As an Information Security Auditor, he understands computer code, risk assessment technologies, and system security, and is proficient in risk assessments and internal audits. As a Cyber Security Engineer, he has technical proficiency, can automate tasks, gather threat intelligence, and analyze risks. He also has experience with configuring and managing security tools. As a GRC Analyst, he understands regulatory requirements and industry standards, has strong analytical and problem-solving skills, and has experience with governance, risk, and compliance (GRC) tools. These diverse skills make Prem a valuable asset in the field of information security.</p>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>IS Auditor</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Cyber Security Engineer</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>GRC Analyst</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Compliance officer</h5>
-                            </div>
-                        </Carousel>
-                    </div>
+                    <TrackVisibility>
+                        {({ isVisible }) =>
+                        <div className={isVisible ? "animate__animated animate__fadeInUp skill-bx" : "skill-bx"}>
+                            <h2>🚀 Core Expertise</h2>
+                            <p>Prem Basnet brings multidisciplinary expertise across cybersecurity domains. As an Information Security Auditor, he masters risk assessment technologies and system security protocols. His role as a Cyber Security Engineer showcases technical proficiency in automation, threat intelligence, and risk analysis. As a GRC Analyst, he navigates complex regulatory landscapes including GDPR, HIPAA, SOC2, and ISO/IEC 27001, making him an invaluable cybersecurity strategist.</p>
+                            <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+                                <div className="item">
+                                    <img src={meter1} alt="Information Security Auditor" />
+                                    <h5>🔍 IS Auditor</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={meter2} alt="Cyber Security Engineer" />
+                                    <h5>🛡️ Cyber Security Engineer</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={meter3} alt="GRC Analyst" />
+                                    <h5>📊 GRC Analyst</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={meter1} alt="Compliance Officer" />
+                                    <h5>✅ Compliance Officer</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={meter2} alt="Risk Assessment" />
+                                    <h5>⚠️ Risk Assessment</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={meter3} alt="Penetration Testing" />
+                                    <h5>🎯 Penetration Testing</h5>
+                                </div>
+                            </Carousel>
+                        </div>}
+                    </TrackVisibility>
                 </div>
             </div>
         </div>

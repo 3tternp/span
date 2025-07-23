@@ -47,6 +47,7 @@ export const NavBar = () => {
               <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
               <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
               <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+              <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>Contact</Nav.Link>
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
@@ -54,7 +55,7 @@ export const NavBar = () => {
                 <a href="https://www.facebook.com/profile.php?id=100051820911738"><img src={navIcon2} alt="" /></a>
                 <a href="https://www.instagram.com/astra.x3/"><img src={navIcon3} alt="" /></a>
               </div>
-              <HashLink to='#connect'>
+              <HashLink to='#projects'>
                 <button className="vvd"><span>Let’s Connect</span></button>
               </HashLink>
             </span>

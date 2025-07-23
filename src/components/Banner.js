@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Information Security Auditor", "GRC Analyst" ];
+  const toRotate = [ "Information Security Auditor", "GRC Analyst", "Cybersecurity Expert", "Compliance Specialist" ];
   const period = 2000;
 
   useEffect(() => {
@@ -54,18 +54,21 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to World of Astra</span>
-                <h1>{`Hi! I'm Prem Basnet`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Information Security Auditor", "GRC Analyst"]'><span className="wrap">{text}</span></span></h1>
-                  <p>Prem is an experienced cybersecurity engineer and information systems auditor with over 8 years of experience helping organizations protect their critical systems and data. He specializes in performing security audits, vulnerability assessments, and leading security initiatives.</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+              <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
+                <span className="tagline">✨ Welcome to World of Astra ✨</span>
+                <h1>{`Hi! I'm Prem Basnet`}</h1>
+                <h1><span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Information Security Auditor", "GRC Analyst", "Cybersecurity Expert", "Compliance Specialist"]'><span className="wrap">{text}</span></span></h1>
+                  <p>🛡️ An experienced cybersecurity engineer and information systems auditor with over 8 years of expertise in protecting critical systems and data. Specializing in security audits, vulnerability assessments, compliance frameworks, and leading innovative security initiatives that safeguard organizations against evolving cyber threats.</p>
+                  <button onClick={() => document.getElementById('projects').scrollIntoView({behavior: 'smooth'})}>
+                    Explore My Work <ArrowRightCircle size={25} />
+                  </button>
               </div>}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
+                <div className={isVisible ? "animate__animated animate__fadeInRight" : ""}>
                   <img src={headerImg} alt="Header Img"/>
                 </div>}
             </TrackVisibility>

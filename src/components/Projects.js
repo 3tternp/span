@@ -11,18 +11,33 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Vulnerability Assessment and Penetration Testing",
-      description: "Specially Focus on Network and Server-Side",
+      title: "🎯 Vulnerability Assessment & Penetration Testing",
+      description: "Advanced Network & Server-Side Security Analysis",
       imgUrl: projImg1,
     },
     {
-      title: "Auditor",
-      description: "Information Security Auditor",
+      title: "🔍 Information Security Auditing",
+      description: "Comprehensive Security Audit & Risk Assessment",
       imgUrl: projImg2,
     },
     {
-      title: "Compliance",
-      description: "Familiar and work in GDPR, CCPA, HIPAA, SOC2, ISO/IEC 27001",
+      title: "✅ Regulatory Compliance",
+      description: "GDPR, CCPA, HIPAA, SOC2, ISO/IEC 27001 Expertise",
+      imgUrl: projImg3,
+    },
+    {
+      title: "🛡️ Security Architecture",
+      description: "Enterprise Security Framework Design",
+      imgUrl: projImg1,
+    },
+    {
+      title: "📊 Risk Management",
+      description: "Strategic Risk Assessment & Mitigation",
+      imgUrl: projImg2,
+    },
+    {
+      title: "🔐 Incident Response",
+      description: "Cybersecurity Incident Management & Recovery",
       imgUrl: projImg3,
     },
   ];
@@ -34,20 +49,19 @@ export const Projects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>As a cyber security practitioner I have involved in lots of technical audit prespective including Network and Server side Vulerability Assessment and Penetration Testing. Beside that as a GRC Analyst I have involved in readiness of various Compliance like HIPAA, CCPA, GDPR, ISO/IEC 27001, SOC2.</p>
+              <div className={isVisible ? "animate__animated animate__fadeInUp": ""}>
+                <h2>🚀 Featured Projects & Expertise</h2>
+                <p>As a seasoned cybersecurity practitioner, I've led numerous high-impact security initiatives spanning technical audits, vulnerability assessments, and penetration testing across network and server infrastructures. My expertise as a GRC Analyst encompasses comprehensive compliance readiness for HIPAA, CCPA, GDPR, ISO/IEC 27001, and SOC2 frameworks, ensuring organizations meet the highest security standards.</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
                         {
                           projects.map((project, index) => {
                             return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
+                              <Col key={index} size={12} sm={6} md={4} className="mb-4">
+                                <ProjectCard {...project} />
+                              </Col>
                             )
                           })
                         }
