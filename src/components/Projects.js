@@ -48,8 +48,7 @@ export const Projects = () => {
         <Row>
           <Col size={12}>
             <TrackVisibility>
-              {({ isVisible }) =>
-              }
+              {({ isVisible }) => (
               <div className={isVisible ? "animate__animated animate__fadeInUp": ""}>
                 <h2>🚀 Featured Projects & Expertise</h2>
                 <p>As a seasoned cybersecurity practitioner, I've led numerous high-impact security initiatives spanning technical audits, vulnerability assessments, and penetration testing across network and server infrastructures. My expertise as a GRC Analyst encompasses comprehensive compliance readiness for HIPAA, CCPA, GDPR, ISO/IEC 27001, and SOC2 frameworks, ensuring organizations meet the highest security standards.</p>
@@ -70,7 +69,8 @@ export const Projects = () => {
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
-              </div>}
+              </div>
+              )}
             </TrackVisibility>
           </Col>
         </Row>

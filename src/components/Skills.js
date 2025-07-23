@@ -32,8 +32,7 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <TrackVisibility>
-                        {({ isVisible }) =>
-                        }
+                        {({ isVisible }) => (
                         <div className={isVisible ? "animate__animated animate__fadeInUp skill-bx" : "skill-bx"}>
                             <h2>🚀 Core Expertise</h2>
                             <p>Prem Basnet brings multidisciplinary expertise across cybersecurity domains. As an Information Security Auditor, he masters risk assessment technologies and system security protocols. His role as a Cyber Security Engineer showcases technical proficiency in automation, threat intelligence, and risk analysis. As a GRC Analyst, he navigates complex regulatory landscapes including GDPR, HIPAA, SOC2, and ISO/IEC 27001, making him an invaluable cybersecurity strategist.</p>
@@ -63,7 +62,8 @@ export const Skills = () => {
                                     <h5>🎯 Penetration Testing</h5>
                                 </div>
                             </Carousel>
-                        </div>}
+                        </div>
+                        )}
                     </TrackVisibility>
                 </div>
             </div>
