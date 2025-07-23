@@ -93,12 +93,11 @@ export const Contact = () => {
                     }
                   </Row>
                 </form>
-              }
-              </div>}
+              </div>
+              )}
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
     </section>
   )
-}
