@@ -85,6 +85,7 @@ export const Contact = () => {
                     }
                   </Row>
                 </form>
+              }
               </div>}
             </TrackVisibility>
           </Col>
