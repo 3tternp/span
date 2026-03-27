@@ -4,45 +4,57 @@ import TrackVisibility from 'react-on-screen';
 
 const skillCategories = [
   {
-    title: "Security Operations",
-    description: "Protecting infrastructure through proactive defense, monitoring, and rapid threat response.",
+    title: "Governance, Risk & Compliance",
+    description: "Navigating complex regulatory landscapes to build trust, reduce risk, and ensure business resilience.",
     skills: [
-      "Incident Response",
-      "Threat Intelligence",
-      "SIEM Management",
-      "Security Architecture",
-      "Network Security",
-      "Endpoint Protection",
-      "Log Analysis",
-      "Threat Hunting"
+      "IS Audits",
+      "Policy Development",
+      "ISO 27001",
+      "SOC 2 Type I & II",
+      "PCI DSS",
+      "HIPAA",
+      "GDPR",
+      "NIST Framework",
+      "COBIT",
+      "Gap Analysis",
+      "Compliance Readiness",
+      "Risk Assessment"
     ]
   },
   {
-    title: "Offensive Security",
-    description: "Identifying and exploiting vulnerabilities before adversaries do, strengthening your defenses.",
+    title: "Offensive Security & VAPT",
+    description: "Identifying and exploiting vulnerabilities before adversaries do — strengthening defenses through real-world attack simulation.",
     skills: [
       "Penetration Testing",
       "Vulnerability Assessment",
-      "Web Application Testing",
+      "Cloud Security (AWS & Azure)",
       "API Security Testing",
       "Network VAPT",
-      "Social Engineering",
+      "Web Application Testing",
       "Red Teaming",
+      "Ethical Hacking",
+      "Reconnaissance & Enumeration",
+      "Exploit Development",
+      "Ransomware Analysis",
       "OWASP Top 10"
     ]
   },
   {
-    title: "Compliance & GRC",
-    description: "Navigating complex regulatory landscapes to build trust and ensure business resilience.",
+    title: "Infrastructure & Operations",
+    description: "Securing and hardening enterprise infrastructure through proven frameworks, monitoring, and incident management.",
     skills: [
-      "GDPR",
-      "HIPAA",
-      "SOC2 Type I & II",
-      "ISO/IEC 27001",
-      "CCPA",
-      "PCI DSS",
-      "NIST Framework",
-      "CIS Controls"
+      "SIEM Management",
+      "CSOC Operations",
+      "Firewall & Server Hardening",
+      "CIS Benchmark",
+      "Network Security",
+      "System Administration (Windows & Linux)",
+      "Database Security (MSSQL, MySQL, Oracle, PostgreSQL)",
+      "Endpoint Protection",
+      "Incident Response",
+      "Threat Intelligence",
+      "Log Analysis & Correlation",
+      "Security Architecture"
     ]
   }
 ];
@@ -55,8 +67,8 @@ export const Skills = () => {
           {({ isVisible }) => (
             <div className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
               <div className="section-header text-center">
-                <h2>Areas of Expertise</h2>
-                <p>Multidisciplinary cybersecurity expertise spanning technical assessments, security operations, and regulatory compliance — trusted by organizations to design and implement comprehensive security programs.</p>
+                <h2>Skills &amp; Expertise</h2>
+                <p>Multidisciplinary cybersecurity expertise spanning governance, offensive security, and infrastructure operations — trusted by organizations to design and implement comprehensive security programs.</p>
               </div>
               <Row className="mt-5">
                 {skillCategories.map((category, index) => (

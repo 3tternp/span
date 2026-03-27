@@ -5,7 +5,7 @@ import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
-const toRotate = [ "Information Security Professional", "GRC Analyst", "Compliance Officer" ];
+const toRotate = [ "Information Security Officer", "CSOC & SIEM Manager", "GRC & IS Auditor" ];
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -51,17 +51,17 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) => (
                 <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
-                  <span className="tagline">Cybersecurity Expert &amp; Security Consultant</span>
+                  <span className="tagline">Information Security Officer &amp; Auditor</span>
                   <h1>{`Hi, I'm Prem Basnet`}</h1>
                   <h1>
                     <span className="txt-rotate" dataPeriod="1000">
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
-                  <p>An experienced cybersecurity professional with over 9 years of experience protecting critical systems and sensitive data. Specializing in security audits, vulnerability assessments, compliance frameworks, and strategic security initiatives that safeguard organizations against evolving cyber threats.</p>
+                  <p>Information Security Officer &amp; Auditor with 9+ years of experience in cybersecurity, IS audit, GRC, penetration testing, and cloud security (AWS &amp; Azure). Skilled in implementing security policies, conducting risk assessments, and ensuring compliance with ISO 27001, SOC 2, PCI DSS, HIPAA, GDPR, NIST, and COBIT.</p>
                   <div className="banner-btns">
-                    <button onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>
-                      Explore My Work <ArrowRightCircle size={22} />
+                    <button onClick={() => document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })}>
+                      View Experience <ArrowRightCircle size={22} />
                     </button>
                     <a href="#contact" className="banner-btn-outline">
                       Get In Touch
@@ -79,13 +79,13 @@ export const Banner = () => {
                     </div>
                     <div className="stat-divider"></div>
                     <div className="stat-item">
-                      <h3>30+</h3>
-                      <span>Compliance Projects</span>
+                      <h3>7</h3>
+                      <span>Compliance Frameworks</span>
                     </div>
                     <div className="stat-divider"></div>
                     <div className="stat-item">
-                      <h3>20+</h3>
-                      <span>VAPT Engagements</span>
+                      <h3>8</h3>
+                      <span>Certifications</span>
                     </div>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeInRight" : ""}>
-                  <img src={headerImg} alt="Prem Basnet - Cybersecurity Professional" />
+                  <img src={headerImg} alt="Prem Basnet - Information Security Officer" />
                 </div>
               }
             </TrackVisibility>
