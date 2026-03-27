@@ -14,7 +14,7 @@ export const Contact = () => {
                 <img
                   className={isVisible ? "animate__animated animate__zoomIn" : ""}
                   src={contactImg}
-                  alt="Contact Us"
+                  alt="Contact Prem Basnet"
                 />
               }
             </TrackVisibility>
@@ -24,11 +24,10 @@ export const Contact = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2>Get In Touch</h2>
+                  <h2>Let's Work Together</h2>
+                  <p className="contact-sub">Have a security challenge or compliance requirement? I'd love to hear about it.</p>
 
-                  {/* 👇 Formsubmit HTML form */}
                   <form action="https://formsubmit.co/basnetprem524@gmail.com" method="POST">
-                    {/* Hidden inputs */}
                     <input type="hidden" name="_captcha" value="false" />
                     <input type="hidden" name="_next" value="https://basnetprem.com.np/thank-you.html" />
                     <input type="hidden" name="_template" value="table" />
@@ -47,8 +46,8 @@ export const Contact = () => {
                         <input type="tel" name="Phone" placeholder="Phone No." />
                       </Col>
                       <Col xs={12} className="px-1">
-                        <textarea rows="6" name="Message" placeholder="Message" required></textarea>
-                        <button type="submit"><span>Send</span></button>
+                        <textarea rows="6" name="Message" placeholder="Tell me about your project or inquiry..." required></textarea>
+                        <button type="submit"><span>Send Message</span></button>
                       </Col>
                     </Row>
                   </form>

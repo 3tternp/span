@@ -46,17 +46,21 @@ export const NavBar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Expertise</Nav.Link>
+              <Nav.Link href="#certifications" className={activeLink === 'certifications' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('certifications')}>Credentials</Nav.Link>
+              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Work</Nav.Link>
               <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>Contact</Nav.Link>
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="https://www.linkedin.com/in/prem-basnet524/"><img src={navIcon1} alt="" /></a>
-                <a href="https://www.facebook.com/profile.php?id=100051820911738"><img src={navIcon2} alt="" /></a>
-                <a href="https://www.instagram.com/astra.x3/"><img src={navIcon3} alt="" /></a>
-                <a href="https://github.com/3tternp"><img src={navIcon4} alt="" /></a>
+                <a href="https://www.linkedin.com/in/prem-basnet524/" target="_blank" rel="noopener noreferrer"><img src={navIcon1} alt="LinkedIn" /></a>
+                <a href="https://www.facebook.com/profile.php?id=100051820911738" target="_blank" rel="noopener noreferrer"><img src={navIcon2} alt="Facebook" /></a>
+                <a href="https://www.instagram.com/astra.x3/" target="_blank" rel="noopener noreferrer"><img src={navIcon3} alt="Instagram" /></a>
+                <a href="https://github.com/3tternp" target="_blank" rel="noopener noreferrer"><img src={navIcon4} alt="GitHub" /></a>
               </div>
+              <HashLink to="#contact">
+                <button><span>Hire Me</span></button>
+              </HashLink>
             </span>
           </Navbar.Collapse>
         </Container>
