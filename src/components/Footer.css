@@ -98,6 +98,46 @@
   margin: 0;
 }
 
+.footer-role {
+  font-size: 14px;
+  color: #AA367C;
+  font-weight: 500;
+  margin-bottom: 12px !important;
+  letter-spacing: 0.3px;
+}
+
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contact-item {
+  display: flex;
+  flex-direction: column;
+  margin: 0 !important;
+}
+
+.footer-contact-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 2px;
+}
+
+.footer-contact-item a,
+.footer-contact-item span {
+  font-size: 14px;
+  color: #B8B8B8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-contact-item a:hover {
+  color: #AA367C;
+}
+
 .footer-nav-links {
   display: flex;
   flex-direction: column;

@@ -598,11 +598,11 @@ span.navbar-text {
 .cert-card {
   display: flex;
   align-items: flex-start;
-  gap: 18px;
+  gap: 14px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 22px 20px;
+  border-radius: 14px;
+  padding: 18px 16px;
   height: 100%;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -617,24 +617,24 @@ span.navbar-text {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 64px;
-  height: 64px;
+  min-width: 56px;
+  height: 56px;
   background: linear-gradient(135deg, rgba(170, 54, 124, 0.18), rgba(74, 47, 189, 0.18));
   border: 1px solid rgba(170, 54, 124, 0.3);
-  border-radius: 12px;
-  padding: 8px;
+  border-radius: 10px;
+  padding: 6px;
   flex-shrink: 0;
 }
 .cert-badge svg {
   color: #AA367C;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 .cert-abbr {
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 700;
   color: #AA367C;
   text-align: center;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   line-height: 1.1;
 }
 .cert-info {
@@ -642,25 +642,203 @@ span.navbar-text {
   min-width: 0;
 }
 .cert-info h5 {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: #fff;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   line-height: 1.3;
 }
 .cert-issuer {
   display: block;
-  font-size: 13px;
+  font-size: 12px;
   color: #AA367C;
   font-weight: 500;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 .cert-category {
   display: block;
-  font-size: 11px;
+  font-size: 10px;
   color: #B8B8B8;
   letter-spacing: 0.3px;
   text-transform: uppercase;
+}
+
+/************ Experience Css ************/
+.experience {
+  padding: 100px 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.97) 0%, rgba(10, 10, 25, 0.95) 100%);
+  position: relative;
+}
+.experience::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(170, 54, 124, 0.07) 0%, transparent 50%);
+  pointer-events: none;
+}
+.subsection-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 32px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #AA367C 0%, rgba(74, 47, 189, 0.3) 100%);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 28px;
+}
+.timeline-dot {
+  position: absolute;
+  left: -26px;
+  top: 14px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #AA367C, #4A2FBD);
+  border: 2px solid #0a0a0a;
+  box-shadow: 0 0 8px rgba(170, 54, 124, 0.5);
+}
+.timeline-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 20px 22px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+.timeline-card:hover {
+  border-color: rgba(170, 54, 124, 0.3);
+  box-shadow: 0 8px 25px rgba(170, 54, 124, 0.1);
+  transform: translateX(4px);
+}
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.timeline-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+}
+.timeline-period {
+  font-size: 12px;
+  color: #AA367C;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.timeline-company {
+  font-size: 14px;
+  color: #B8B8B8;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.timeline-type {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(74, 47, 189, 0.2);
+  border: 1px solid rgba(74, 47, 189, 0.3);
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.timeline-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.timeline-highlights li {
+  font-size: 13px;
+  color: #B8B8B8;
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 5px;
+}
+.timeline-highlights li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: #AA367C;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.education-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  padding: 18px 20px;
+  transition: all 0.3s ease;
+}
+.education-card:hover {
+  border-color: rgba(170, 54, 124, 0.3);
+  box-shadow: 0 6px 20px rgba(170, 54, 124, 0.08);
+}
+.edu-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.edu-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.edu-badge--active {
+  background: rgba(170, 54, 124, 0.2);
+  border-color: rgba(170, 54, 124, 0.4);
+  color: #AA367C;
+}
+.edu-period {
+  font-size: 12px;
+  color: #B8B8B8;
+}
+.edu-degree {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.edu-institution {
+  font-size: 13px;
+  color: #B8B8B8;
 }
 
 /************ Footer Css ************/
@@ -717,35 +895,46 @@ span.navbar-text {
 /************ Responsive Design ************/
 @media (max-width: 768px) {
   .banner h1 {
-    font-size: 40px;
+    font-size: 38px;
   }
   .banner p {
-    font-size: 16px;
+    font-size: 15px;
   }
   .section-header h2, .project h2, .certifications h2, .contact h2 {
-    font-size: 34px;
+    font-size: 32px;
   }
   .banner-btns {
     flex-direction: column;
     align-items: flex-start;
   }
   .stats-row {
-    gap: 16px;
+    gap: 14px;
   }
   .stat-item h3 {
-    font-size: 24px;
+    font-size: 22px;
   }
   nav.navbar .navbar-nav .nav-link.navbar-link {
     padding: 10px 0;
   }
   .proj-txtx h4 {
+    font-size: 17px;
+  }
+  .certifications, .experience, .skill {
+    padding: 60px 0;
+  }
+  .timeline {
+    padding-left: 22px;
+  }
+  .timeline-dot {
+    left: -18px;
+  }
+  .timeline-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .subsection-title {
     font-size: 18px;
-  }
-  .certifications {
-    padding: 60px 0;
-  }
-  .skill {
-    padding: 60px 0;
+    margin-bottom: 20px;
   }
 }
 

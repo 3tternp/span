@@ -13,40 +13,40 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Vulnerability Assessment & Penetration Testing",
-      description: "Comprehensive network and server-side security analysis identifying critical vulnerabilities before adversaries can exploit them.",
+      title: "Cloud Security Audits — AWS & Azure",
+      description: "Full-phase cloud security assessments covering configuration reviews, IAM analysis, network controls, and remediation guidance for AWS and Azure environments.",
       imgUrl: projImg1,
-      tags: ["VAPT", "Network Security", "Nessus", "Burp Suite"]
+      tags: ["AWS", "Azure", "Cloud VAPT", "IAM Review", "Config Audit"]
     },
     {
-      title: "Information Security Auditing",
-      description: "End-to-end IS audit engagements covering control assessments, risk identification, and executive-level reporting.",
+      title: "IS Audit & GRC Programs",
+      description: "End-to-end information security audit engagements — scoping, control assessment, gap analysis, risk register development, and executive reporting.",
       imgUrl: projImg2,
-      tags: ["IS Audit", "Risk Assessment", "ISO 27001", "Reporting"]
+      tags: ["IS Audit", "Risk Register", "ISO 27001", "Gap Analysis"]
+    },
+    {
+      title: "VAPT Engagements",
+      description: "Comprehensive network, web application, and API penetration testing engagements using industry-standard methodologies, from reconnaissance through remediation.",
+      imgUrl: projImg3,
+      tags: ["Penetration Testing", "Web App", "API Security", "Network VAPT"]
     },
     {
       title: "Regulatory Compliance",
-      description: "Guiding organizations through complex compliance requirements with gap analysis, remediation roadmaps, and audit readiness.",
-      imgUrl: projImg3,
-      tags: ["GDPR", "HIPAA", "SOC2", "CCPA", "PCI DSS"]
-    },
-    {
-      title: "Security Architecture",
-      description: "Designing and implementing enterprise security frameworks that align with business objectives and industry best practices.",
+      description: "Compliance readiness assessments and implementation support across multiple frameworks — helping organizations achieve and maintain certification.",
       imgUrl: projImg4,
-      tags: ["Zero Trust", "NIST", "CIS Controls", "Framework Design"]
+      tags: ["ISO 27001", "SOC 2", "PCI DSS", "HIPAA", "GDPR", "COBIT"]
     },
     {
-      title: "Risk Management",
-      description: "Strategic risk assessment and mitigation planning to reduce exposure and build organizational cyber resilience.",
+      title: "CSOC & SIEM Operations",
+      description: "Design and management of Security Operations Centers — SIEM deployment, use case development, threat intelligence integration, and 24/7 monitoring.",
       imgUrl: projImg5,
-      tags: ["Risk Assessment", "Threat Modeling", "Business Continuity"]
+      tags: ["SIEM", "SOC", "Threat Intelligence", "Incident Response"]
     },
     {
-      title: "Incident Response",
-      description: "Rapid containment, investigation, and recovery from cybersecurity incidents, minimizing business impact and data loss.",
+      title: "Security Policy Development",
+      description: "Developing, reviewing, and updating organizational security policies, standards, and procedures aligned with ISO 27001:2022 and industry best practices.",
       imgUrl: projImg6,
-      tags: ["IR Planning", "Forensics", "Recovery", "Post-Incident Review"]
+      tags: ["Policy Writing", "ISO 27001:2022", "ISMS", "Standards"]
     },
   ];
 
@@ -58,8 +58,8 @@ export const Projects = () => {
             <TrackVisibility>
               {({ isVisible }) => (
                 <div className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
-                  <h2>Featured Work &amp; Expertise</h2>
-                  <p>A selection of high-impact security engagements spanning penetration testing, compliance audits, and security architecture — delivering measurable risk reduction for clients across industries.</p>
+                  <h2>Featured Work &amp; Engagements</h2>
+                  <p>A selection of high-impact security engagements — from cloud security audits and penetration testing to full ISO 27001 implementation and CSOC operations — delivering measurable risk reduction across industries.</p>
                   <Row>
                     {projects.map((project, index) => (
                       <Col key={index} size={12} sm={6} md={4} className="mb-4">
