@@ -41,23 +41,53 @@ export const Banner = () => {
     }, delta);
 
     return () => { clearInterval(ticker) };
-  }, [delta, loopNum, isDeleting, text, toRotate, period])
+  }, [delta, loopNum, isDeleting, text])
 
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) => (
                 <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
-                <span className="tagline">✨ Welcome to World of Astra ✨</span>
-                <h1>{`Hi! I'm Prem Basnet`}</h1>
-                <h1><span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Information Security Professional", "GRC Analyst", "Compliance Officer"]'><span className="wrap">{text}</span></span></h1>
-                  <p>🛡️ An experienced cybersecurity Professional with over 9 years of experience in protecting critical systems and data. Specializing in security audits, vulnerability assessments, compliance frameworks, and leading innovative security initiatives that safeguard organizations against evolving cyber threats.</p>
-                  <button onClick={() => document.getElementById('projects').scrollIntoView({behavior: 'smooth'})}>
-                    Explore My Work <ArrowRightCircle size={25} />
-                  </button>
+                  <span className="tagline">Cybersecurity Expert &amp; Security Consultant</span>
+                  <h1>{`Hi, I'm Prem Basnet`}</h1>
+                  <h1>
+                    <span className="txt-rotate" dataPeriod="1000">
+                      <span className="wrap">{text}</span>
+                    </span>
+                  </h1>
+                  <p>An experienced cybersecurity professional with over 9 years of experience protecting critical systems and sensitive data. Specializing in security audits, vulnerability assessments, compliance frameworks, and strategic security initiatives that safeguard organizations against evolving cyber threats.</p>
+                  <div className="banner-btns">
+                    <button onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>
+                      Explore My Work <ArrowRightCircle size={22} />
+                    </button>
+                    <a href="#contact" className="banner-btn-outline">
+                      Get In Touch
+                    </a>
+                  </div>
+                  <div className="stats-row">
+                    <div className="stat-item">
+                      <h3>9+</h3>
+                      <span>Years Experience</span>
+                    </div>
+                    <div className="stat-divider"></div>
+                    <div className="stat-item">
+                      <h3>50+</h3>
+                      <span>Security Audits</span>
+                    </div>
+                    <div className="stat-divider"></div>
+                    <div className="stat-item">
+                      <h3>30+</h3>
+                      <span>Compliance Projects</span>
+                    </div>
+                    <div className="stat-divider"></div>
+                    <div className="stat-item">
+                      <h3>20+</h3>
+                      <span>VAPT Engagements</span>
+                    </div>
+                  </div>
                 </div>
               )}
             </TrackVisibility>
@@ -66,7 +96,7 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeInRight" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
+                  <img src={headerImg} alt="Prem Basnet - Cybersecurity Professional" />
                 </div>
               }
             </TrackVisibility>
