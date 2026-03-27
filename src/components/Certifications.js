@@ -6,25 +6,25 @@ import TrackVisibility from 'react-on-screen';
 const certifications = [
   {
     abbr: "ISO 27001",
-    name: "Lead Auditor — ISO 27001:2022",
+    name: "ISO 27001:2022 Lead Auditor",
     issuer: "PECB / BSI",
     category: "Information Security Management"
   },
   {
     abbr: "CRTP",
-    name: "Certified Red Team Professional",
+    name: "CRTP – Certified Red Team Professional",
     issuer: "Altered Security",
     category: "Offensive Security / Red Teaming"
   },
   {
-    abbr: "(ISC)² CC",
-    name: "Certified in Cybersecurity",
+    abbr: "(ISC)²",
+    name: "(ISC)² CC",
     issuer: "(ISC)²",
     category: "Security Fundamentals"
   },
   {
     abbr: "CNSS",
-    name: "Certified Network Security Specialist",
+    name: "CNSS: Certified Network Security Specialist (ICSI, UK)",
     issuer: "ICSI, United Kingdom",
     category: "Network Security"
   },
