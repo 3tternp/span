@@ -62,6 +62,7 @@ export const Certifications = () => {
           {({ isVisible }) => (
             <div className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
               <div className="section-header text-center">
+                <div className="section-label section-label--center">Credentials</div>
                 <h2>Certifications &amp; Credentials</h2>
                 <p>Industry-recognized certifications validating expertise across information security management, offensive security, cloud, compliance, and threat intelligence.</p>
               </div>

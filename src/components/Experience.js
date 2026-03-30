@@ -91,6 +91,7 @@ export const Experience = () => {
           {({ isVisible }) => (
             <div className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
               <div className="section-header text-center">
+                <div className="section-label section-label--center">Career History</div>
                 <h2>Professional Experience</h2>
                 <p>9+ years of progressive cybersecurity experience spanning security operations, IS auditing, penetration testing, and compliance across multiple industries.</p>
               </div>

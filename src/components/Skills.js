@@ -67,7 +67,8 @@ export const Skills = () => {
           {({ isVisible }) => (
             <div className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
               <div className="section-header text-center">
-                <h2>Skills &amp; Expertise</h2>
+                <div className="section-label section-label--center">Skills &amp; Abilities</div>
+                <h2>Areas of Expertise</h2>
                 <p>Multidisciplinary cybersecurity expertise spanning governance, offensive security, and infrastructure operations — trusted by organizations to design and implement comprehensive security programs.</p>
               </div>
               <Row className="mt-5">

@@ -58,6 +58,7 @@ export const Projects = () => {
             <TrackVisibility>
               {({ isVisible }) => (
                 <div className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
+                  <div className="section-label section-label--center">Featured Work</div>
                   <h2>Featured Work &amp; Engagements</h2>
                   <p>A selection of high-impact security engagements — from cloud security audits and penetration testing to full ISO 27001 implementation and CSOC operations — delivering measurable risk reduction across industries.</p>
                   <Row>

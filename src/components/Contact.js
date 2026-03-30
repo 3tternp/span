@@ -24,6 +24,7 @@ export const Contact = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <div className="section-label">Get In Touch</div>
                   <h2>Let's Work Together</h2>
                   <p className="contact-sub">Have a security challenge or compliance requirement? I'd love to hear about it.</p>
 
