@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.jpg";
-import { ArrowRightCircle } from 'react-bootstrap-icons';
+import { ArrowRightCircle, GeoAlt } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -51,6 +51,10 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) => (
                 <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
+                  <div className="available-badge">
+                    <span className="available-dot"></span>
+                    Available for Consulting Engagements
+                  </div>
                   <span className="tagline">Information Security Officer &amp; Auditor</span>
                   <h1>{`Hi, I'm Prem Basnet`}</h1>
                   <h1>
@@ -58,6 +62,9 @@ export const Banner = () => {
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
+                  <div className="banner-location">
+                    <GeoAlt size={13} /> Anamnagar, Kathmandu, Nepal
+                  </div>
                   <p>Information Security Officer &amp; Auditor with 9+ years of experience in cybersecurity, IS audit, GRC, penetration testing, and cloud security (AWS &amp; Azure). Skilled in implementing security policies, conducting risk assessments, and ensuring compliance with ISO 27001, SOC 2, PCI DSS, HIPAA, GDPR, NIST, and COBIT.</p>
                   <div className="banner-btns">
                     <button onClick={() => document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })}>
