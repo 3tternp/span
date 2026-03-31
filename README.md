@@ -1,6 +1,6 @@
 <div align="center">
 
-# Prem Basnet — Cybersecurity Portfolio
+# Prem Basnet Cybersecurity Portfolio
 
 ### Information Security Officer & Auditor
 
