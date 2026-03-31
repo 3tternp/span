@@ -2,7 +2,7 @@
 
 # Prem Basnet Cybersecurity Portfolio
 
-### Information Security Officer & Auditor
+### SIEM & SOC Manager 
 
 Anamnagar, Kathmandu, Nepal &nbsp;·&nbsp; basnetprem524@gmail.com &nbsp;·&nbsp; +977-9861375054
 
