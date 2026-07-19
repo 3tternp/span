@@ -45,7 +45,7 @@ Home → Skills → Experience → Certifications → Work → Contact
 | 1 | **Hero / Banner** | Introduction, rotating roles, professional summary, and key stats |
 | 2 | **Skills & Expertise** | Three-column grid: GRC & Compliance · Offensive Security & VAPT · Infrastructure & Operations |
 | 3 | **Professional Experience** | Career timeline with 5 roles + Education sidebar |
-| 4 | **Certifications & Credentials** | All 8 industry certifications displayed as credential cards |
+| 4 | **Certifications & Credentials** | All 9 industry certifications displayed as credential cards |
 | 5 | **Featured Work & Engagements** | Real engagement types with technology tags |
 | 6 | **Contact** | Contact form (Formsubmit) + location, phone, and email |
 
@@ -148,6 +148,7 @@ span/
 | 6 | API Security for PCI Compliance | API Security Academy |
 | 7 | API Penetration Testing | API University |
 | 8 | Ransomware Uncover Specialist | ICTTF |
+| 9 | ECSA – EC-Council Certified Security Analyst | EC-Council |
 
 ---
 

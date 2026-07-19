@@ -56,9 +56,10 @@ export const Banner = () => {
                     Available for Consulting Engagements
                   </div>
                   <span className="tagline">Information Security Officer &amp; Auditor</span>
+                  <span className="terminal-prompt"><span className="prompt-user">prem@security</span>:~$ whoami<span className="prompt-caret"></span></span>
                   <h1>{`Hi, I'm Prem Basnet`}</h1>
                   <h1>
-                    <span className="txt-rotate" dataPeriod="1000">
+                    <span className="txt-rotate" data-period="1000">
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
@@ -91,7 +92,7 @@ export const Banner = () => {
                     </div>
                     <div className="stat-divider"></div>
                     <div className="stat-item">
-                      <h3>8</h3>
+                      <h3>9</h3>
                       <span>Certifications</span>
                     </div>
                   </div>
