@@ -6,11 +6,11 @@
 
 Anamnagar, Kathmandu, Nepal &nbsp;·&nbsp; basnetprem524@gmail.com &nbsp;·&nbsp; +977-9861375054
 
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://reactjs.org/)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?style=flat-square&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
-[![Node.js](https://img.shields.io/badge/Node.js-16+-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
-[![Animate.css](https://img.shields.io/badge/Animate.css-4-FF6B6B?style=flat-square)](https://animate.style/)
-[![Live Site](https://img.shields.io/badge/Live%20Site-basnetprem.com.np-AA367C?style=flat-square&logo=vercel&logoColor=white)](https://basnetprem.com.np)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-FF6B6B?style=flat-square)](https://www.framer.com/motion/)
+[![Live Site](https://img.shields.io/badge/Live%20Site-basnetprem.com.np-00FF9D?style=flat-square&logo=vercel&logoColor=black)](https://basnetprem.com.np)
 
 <br/>
 
@@ -44,7 +44,7 @@ Home → Skills → Experience → Certifications → Work → Contact
 |---|---|---|
 | 1 | **Hero / Banner** | Introduction, rotating roles, professional summary, and key stats |
 | 2 | **Skills & Expertise** | Three-column grid: GRC & Compliance · Offensive Security & VAPT · Infrastructure & Operations |
-| 3 | **Professional Experience** | Career timeline with 5 roles + Education sidebar |
+| 3 | **Professional Experience** | Career timeline with 8 roles + Education sidebar |
 | 4 | **Certifications & Credentials** | All 9 industry certifications displayed as credential cards |
 | 5 | **Featured Work & Engagements** | Real engagement types with technology tags |
 | 6 | **Contact** | Contact form (Formsubmit) + location, phone, and email |
@@ -55,15 +55,14 @@ Home → Skills → Experience → Certifications → Work → Contact
 
 | Category | Technology |
 |---|---|
-| **Framework** | [React 18](https://reactjs.org/) via Create React App |
-| **UI Library** | [React-Bootstrap 5](https://react-bootstrap.github.io/) |
-| **Icons** | [React Bootstrap Icons 1.8](https://icons.getbootstrap.com/) |
-| **Animations** | [Animate.css 4](https://animate.style/) |
-| **Routing** | [React Router v6](https://reactrouter.com/) + [React Router Hash Link](https://www.npmjs.com/package/react-router-hash-link) |
-| **Scroll Detection** | [react-on-screen](https://www.npmjs.com/package/react-on-screen) |
+| **Build tool** | [Vite 6](https://vitejs.dev/) |
+| **Framework** | [React 19](https://reactjs.org/) |
+| **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) (`@tailwindcss/vite`) |
+| **Animations** | [Framer Motion 11](https://www.framer.com/motion/) |
+| **Icons** | [Lucide React](https://lucide.dev/) |
+| **Routing** | [React Router v7](https://reactrouter.com/) + [React Router Hash Link](https://www.npmjs.com/package/react-router-hash-link) |
 | **Contact Form** | [Formsubmit.co](https://formsubmit.co/) (zero-backend) |
-| **Custom Fonts** | CentraNo2 — Bold · Medium · Book |
-| **Backend (inactive)** | Express.js + Nodemailer (prepared, not deployed) |
+| **Custom Fonts** | CentraNo2 (local) — Bold · Medium · Book · JetBrains Mono (Google Fonts) |
 
 ---
 
@@ -71,8 +70,8 @@ Home → Skills → Experience → Certifications → Work → Contact
 
 ### Prerequisites
 
-- **Node.js** 16+
-- **npm** 8+
+- **Node.js** 20+
+- **npm** 10+
 
 ### 1. Clone the repository
 
@@ -90,10 +89,10 @@ npm install
 ### 3. Start development server
 
 ```bash
-npm start
+npm run dev
 ```
 
-Runs at [http://localhost:3000](http://localhost:3000) with hot reload.
+Runs at [http://localhost:5000](http://localhost:5000) with hot reload.
 
 ### 4. Build for production
 
@@ -101,7 +100,7 @@ Runs at [http://localhost:3000](http://localhost:3000) with hot reload.
 npm run build
 ```
 
-Outputs optimized static files to `/build/` — deploy to any static host (GitHub Pages, Netlify, Vercel).
+Outputs optimized static files to `/dist/` — deploy to any static host (GitHub Pages, Netlify, Cloudflare Pages).
 
 ---
 
@@ -110,27 +109,28 @@ Outputs optimized static files to `/build/` — deploy to any static host (GitHu
 ```
 span/
 ├── public/
-│   ├── index.html             # HTML template with SEO meta tags
-│   └── thank-you.html         # Contact form success redirect
+│   ├── favicon.ico, logo192.png, logo512.png, manifest.json, robots.txt
+│   └── thank-you.html          # Contact form success redirect
 ├── src/
 │   ├── components/
-│   │   ├── NavBar.js          # Fixed navigation · social icons · Hire Me CTA
-│   │   ├── Banner.js          # Hero · typing animation · stats · availability badge
-│   │   ├── Skills.js          # Three-column expertise grid with skill tags
-│   │   ├── Experience.js      # Career timeline + Education sidebar
-│   │   ├── Certifications.js  # 8 credentials in 4-column grid
-│   │   ├── Projects.js        # Featured engagement cards with technology tags
-│   │   ├── ProjectCard.js     # Reusable project card with hover overlay
-│   │   ├── Contact.js         # Formsubmit contact form
-│   │   ├── Footer.js          # Footer · contact info · quick links · social
-│   │   └── Footer.css         # Footer-specific styles
+│   │   ├── NavBar.jsx           # Fixed navigation · social icons · Hire Me CTA · mobile menu
+│   │   ├── Banner.jsx           # Hero · typewriter effect · stats · availability badge
+│   │   ├── Skills.jsx           # Three-column expertise grid with skill tags
+│   │   ├── Experience.jsx       # Career timeline + Education sidebar
+│   │   ├── Certifications.jsx   # 9 credentials in a 3-column grid
+│   │   ├── Projects.jsx         # Featured engagement cards with technology tags
+│   │   ├── ProjectCard.jsx      # Reusable project card with hover overlay
+│   │   ├── Contact.jsx          # Formsubmit contact form
+│   │   └── Footer.jsx           # Footer · contact info · quick links · social
 │   ├── assets/
-│   │   ├── img/               # Project images · nav icons · logo · backgrounds
-│   │   └── font/              # CentraNo2 font files
-│   ├── App.js                 # Root component
-│   └── App.css                # Global styles · animations · all component CSS
-├── server.js                  # Express.js backend (inactive)
-├── CNAME                      # Custom domain: basnetprem.com.np
+│   │   ├── img/                 # Project images · logo
+│   │   └── font/                # CentraNo2 font files
+│   ├── App.jsx                  # Root component
+│   ├── main.jsx                 # Entry point (BrowserRouter)
+│   └── index.css                # Tailwind v4 import + design tokens + global styles
+├── index.html                   # Vite HTML entry with SEO meta tags
+├── vite.config.js
+├── CNAME                        # Custom domain: basnetprem.com.np
 └── package.json
 ```
 

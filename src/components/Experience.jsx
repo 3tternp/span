@@ -3,7 +3,19 @@ import { Briefcase, GraduationCap } from 'lucide-react'
 
 const experiences = [
   {
-    title: 'CSOC & SIEM Manager',
+    title: 'Manager, SIEM & CSOC',
+    company: 'Cyber Universe Europe',
+    period: 'January 2026 – Present',
+    type: 'Full-time',
+    highlights: [
+      'Lead SIEM operations and CSOC monitoring for European client environments, mirroring the SIEM & CSOC manager role at Vairav Technology',
+      'Configure and optimize SIEM use cases, correlation rules, and threat detection workflows',
+      'Oversee incident triage, investigation, and coordinated remediation across distributed teams',
+      'Deliver security metrics, incident reporting, and compliance dashboards to international stakeholders',
+    ],
+  },
+  {
+    title: 'Manager, SIEM & CSOC',
     company: 'Vairav Technology',
     period: 'November 2025 – Present',
     type: 'Full-time',
@@ -13,18 +25,6 @@ const experiences = [
       'Define SOC processes, workflows, and SLAs; ensure continuous monitoring effectiveness',
       'Develop and tune SIEM use cases, integrate threat intelligence, and reduce false positives',
       'Produce security metrics, incident reports, and compliance dashboards for management and auditors',
-    ],
-  },
-  {
-    title: 'Information Security Officer',
-    company: 'Vairav Technology',
-    period: 'January 2023 – October 2025',
-    type: 'Full-time',
-    highlights: [
-      'Developed, reviewed, and updated organizational security policies in compliance with ISO 27001:2022',
-      'Led and supported multiple IS audit and GRC projects, ensuring scope compliance and smooth project execution',
-      'Conducted cloud security audits and full-phase penetration testing on AWS & Azure platforms',
-      'Served as reviewer for ISO 27001 certification, renewal, and surveillance audits',
     ],
   },
   {
@@ -38,6 +38,18 @@ const experiences = [
     ],
   },
   {
+    title: 'Team Lead, IS Audit & GRC',
+    company: 'Vairav Technology',
+    period: '2023 – November 2025',
+    type: 'Full-time',
+    highlights: [
+      'Led and mentored the IS audit and GRC team, overseeing scope, quality, and timely delivery of engagements',
+      'Served as reviewer for ISO 27001 certification, renewal, and surveillance audits',
+      'Directed full-phase penetration testing and cloud security audit engagements on AWS & Azure',
+      'Reported audit findings, risk posture, and remediation plans to senior management and clients',
+    ],
+  },
+  {
     title: 'Visiting Tutor',
     company: 'Islington College',
     period: 'January 2022 – June 2022',
@@ -45,6 +57,30 @@ const experiences = [
     highlights: [
       'Delivered courses on Ethical Hacking, Security Auditing, and Penetration Testing',
       'Mentored students in applying practical cybersecurity skills and industry tools',
+    ],
+  },
+  {
+    title: 'IS Audit and GRC Analyst and ISO',
+    company: 'Vairav Technology',
+    period: '2021 – 2023',
+    type: 'Full-time',
+    highlights: [
+      'Developed, reviewed, and updated organizational security policies in compliance with ISO 27001:2022',
+      'Conducted IS audits, gap analysis, and risk assessments across business units',
+      'Supported cloud security audits and penetration testing engagements on AWS & Azure platforms',
+      'Served as Information Security Officer (ISO), coordinating compliance efforts across teams',
+    ],
+  },
+  {
+    title: 'Senior Security Engineer',
+    company: 'Vairav Technology',
+    period: '2019 – 2021',
+    type: 'Full-time',
+    highlights: [
+      'Led a team conducting VAPT (vulnerability assessment & penetration testing) across web/mobile applications, networks, and server environments',
+      'Performed technology audits of applications, network infrastructure, and server environments for enterprise clients',
+      'Mentored junior security engineers on penetration testing methodologies and reporting standards',
+      'Delivered remediation guidance and technical findings to stakeholders',
     ],
   },
   {
