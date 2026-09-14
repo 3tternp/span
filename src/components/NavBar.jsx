@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Linkedin, Github, Instagram, Facebook, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { HashLink } from 'react-router-hash-link'
 import logo from '../assets/img/logo.png'
+import { Linkedin, Github, Instagram, Facebook } from './SocialIcons.jsx'
 
 const navLinks = [
   { href: '#home',          label: 'Home',       id: 'home'          },

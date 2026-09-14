@@ -48,7 +48,6 @@ src/
     ProjectCard.jsx     # reusable project card component
     Contact.jsx         # FormSubmit contact form
     Footer.jsx          # three-column footer
-server.js               # Express + Nodemailer backend (inactive, not wired)
 ```
 
 ## Key design tokens (src/index.css @theme)
