@@ -102,30 +102,51 @@ const education = [
   { degree: '+2 Science (Computer)',                    institution: 'Ambition Academy H.S.S',             period: '2010 – 2012', status: 'Completed' },
 ]
 
+const RECENT = 4
+
+function Role({ exp }) {
+  return (
+    <article className="py-6 grid md:grid-cols-[170px_1fr] gap-2 md:gap-8">
+      <p className="text-[14px] text-muted">
+        {exp.period}
+        <span className="block">{exp.type}</span>
+      </p>
+      <div>
+        <h3 className="font-serif text-xl leading-snug">{exp.title}</h3>
+        <p className="text-muted mb-3">{exp.company}</p>
+        <ul className="list-disc pl-5 space-y-1.5 text-[15px] marker:text-muted">
+          {exp.highlights.map((pt, j) => <li key={j}>{pt}</li>)}
+        </ul>
+      </div>
+    </article>
+  )
+}
+
 export default function Experience() {
+  const recent = experiences.slice(0, RECENT)
+  const earlier = experiences.slice(RECENT)
+
   return (
     <Section id="experience" title="Experience"
       intro="Ten years across security operations, IS audit, penetration testing and compliance.">
       <p className="mb-6">
         <a href="/Prem-Basnet-CV.pdf" download className="underline underline-offset-4 decoration-accent hover:decoration-ink">Download my CV (PDF)</a>
       </p>
+
       <div className="divide-y divide-rule border-y border-rule">
-        {experiences.map((exp, i) => (
-          <article key={i} className="py-6 grid md:grid-cols-[170px_1fr] gap-2 md:gap-8">
-            <p className="text-[14px] text-muted">
-              {exp.period}
-              <span className="block">{exp.type}</span>
-            </p>
-            <div>
-              <h3 className="font-serif text-xl leading-snug">{exp.title}</h3>
-              <p className="text-muted mb-3">{exp.company}</p>
-              <ul className="list-disc pl-5 space-y-1.5 text-[15px] marker:text-muted">
-                {exp.highlights.map((pt, j) => <li key={j}>{pt}</li>)}
-              </ul>
-            </div>
-          </article>
-        ))}
+        {recent.map((exp, i) => <Role key={i} exp={exp} />)}
       </div>
+
+      <details className="group border-b border-rule">
+        <summary className="py-4 cursor-pointer list-none flex items-center justify-between
+          font-medium hover:text-accent">
+          <span>Earlier roles ({earlier.length}) · 2016 – 2022</span>
+          <span aria-hidden="true" className="text-muted group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+        </summary>
+        <div className="divide-y divide-rule border-t border-rule">
+          {earlier.map((exp, i) => <Role key={i} exp={exp} />)}
+        </div>
+      </details>
 
       <h3 className="font-serif text-2xl mt-14 mb-4">Education</h3>
       <ul className="divide-y divide-rule border-y border-rule">

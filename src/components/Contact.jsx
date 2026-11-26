@@ -5,7 +5,7 @@ const field =
 
 export default function Contact() {
   return (
-    <Section id="contact" title="Contact"
+    <Section id="contact" title="Contact" tint
       intro="Hiring, or have a security or compliance requirement? Email is the quickest way to reach me.">
       <div className="grid xl:grid-cols-[1fr_1.4fr] gap-12">
         <dl className="space-y-5">

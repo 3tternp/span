@@ -35,7 +35,7 @@ const categories = [
 
 export default function Skills() {
   return (
-    <Section id="skills" title="Skills"
+    <Section id="skills" title="Skills" tint
       intro="Mostly compliance and audit work, penetration testing, and running security operations.">
       <dl className="divide-y divide-rule border-y border-rule">
         {categories.map(c => (

@@ -37,7 +37,10 @@ export default function NavBar() {
   return (
     <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b border-rule">
       <nav aria-label="Primary" className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="font-serif text-xl no-underline">Prem Basnet</a>
+        <a href="#top" className="flex items-center gap-3 no-underline">
+          <span aria-hidden="true" className="w-8 h-8 grid place-items-center bg-accent text-paper font-serif text-[15px] leading-none">PB</span>
+          <span className="font-serif text-xl">Prem Basnet</span>
+        </a>
 
         <div className="hidden md:flex items-center gap-8 text-[15px]">
           {navLinks.map(l => (
