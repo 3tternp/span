@@ -87,14 +87,6 @@ export default function Banner() {
               </span>
             </motion.div>
 
-            {/* Tagline pill */}
-            <motion.div variants={itemVariants}>
-              <span className="inline-block px-5 py-2.5 rounded-full text-[15px] font-semibold tracking-wide mb-5
-                border border-white/20 glow"
-                style={{ background: 'linear-gradient(135deg, rgba(0,255,157,0.15), rgba(0,184,255,0.15))', backdropFilter: 'blur(10px)' }}>
-                Information Security Officer &amp; Auditor
-              </span>
-            </motion.div>
 
             {/* Terminal prompt */}
             <motion.div variants={itemVariants}>
