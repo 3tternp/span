@@ -3,7 +3,7 @@ import headerImg from '../assets/img/header-img.jpg'
 export default function Banner() {
   return (
     <section id="top" className="pt-10 pb-12 md:pt-14 md:pb-16">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-[1.4fr_1fr] gap-12 items-center">
+      <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center">
         <div>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] tracking-tight mb-5 max-w-2xl">
             I help organisations pass their audits and catch real attacks.
@@ -33,9 +33,9 @@ export default function Banner() {
         <img
           src={headerImg}
           alt="Prem Basnet"
-          width="420"
+          width="500" height="625"
           fetchPriority="high"
-          className="w-full max-w-sm md:ml-auto border border-rule"
+          className="w-full max-w-sm lg:ml-auto aspect-[4/5] object-cover object-top border border-rule"
         />
       </div>
     </section>
