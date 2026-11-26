@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import logo from '../assets/img/logo.png'
-import { Linkedin, Github, Instagram, Facebook } from './SocialIcons.jsx'
+import { Linkedin, Github } from './SocialIcons.jsx'
 
 const navLinks = [
   { href: '#home',          label: 'Home',       id: 'home'          },
@@ -15,8 +15,6 @@ const navLinks = [
 
 const socialLinks = [
   { href: 'https://www.linkedin.com/in/prem-basnet524/',               Icon: Linkedin,  label: 'LinkedIn'  },
-  { href: 'https://www.facebook.com/profile.php?id=100051820911738',   Icon: Facebook,  label: 'Facebook'  },
-  { href: 'https://www.instagram.com/astra.x3/',                       Icon: Instagram, label: 'Instagram' },
   { href: 'https://github.com/3tternp',                                 Icon: Github,    label: 'GitHub'    },
 ]
 

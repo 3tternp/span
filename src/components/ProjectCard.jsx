@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export default function ProjectCard({ title, description, imgUrl, tags }) {
+export default function ProjectCard({ title, description, Icon, tags }) {
   return (
     <motion.div
       whileHover={{ y: -8 }}
@@ -13,14 +13,13 @@ export default function ProjectCard({ title, description, imgUrl, tags }) {
         backdropFilter: 'blur(10px)',
       }}
     >
-      {/* Image */}
-      <div className="overflow-hidden aspect-[16/10]">
-        <img
-          src={imgUrl}
-          alt={title}
-          loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
+      {/* Icon header */}
+      <div className="aspect-[16/10] flex items-center justify-center overflow-hidden relative"
+        style={{ background: 'radial-gradient(circle at 50% 40%, rgba(0,255,157,0.14), transparent 70%)' }}>
+        <div className="w-20 h-20 rounded-2xl flex items-center justify-center bg-accent/10 border border-accent/30
+          transition-transform duration-500 group-hover:scale-110">
+          <Icon size={36} className="text-accent" aria-hidden="true" />
+        </div>
       </div>
 
       {/* Hover overlay */}
