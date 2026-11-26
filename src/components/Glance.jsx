@@ -7,7 +7,7 @@ const facts = [
 
 export default function Glance() {
   return (
-    <section aria-label="At a glance" className="border-t border-rule bg-[#efebe2]">
+    <section aria-label="At a glance" className="border-t border-rule bg-tint">
       <dl className="max-w-6xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-6">
         {facts.map(f => (
           <div key={f.label}>

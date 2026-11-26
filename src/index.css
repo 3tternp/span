@@ -1,15 +1,48 @@
 @import "tailwindcss";
 
-@theme {
-  --color-paper:  #f6f3ed;
-  --color-ink:    #1d1c1a;
-  --color-muted:  #5f5b53;
-  --color-rule:   #d9d4c8;
-  --color-accent: #1f5d4a;
-  --color-accent-dark: #154436;
+@theme inline {
+  --color-paper:  var(--paper);
+  --color-tint:   var(--tint);
+  --color-field:  var(--field);
+  --color-ink:    var(--ink);
+  --color-muted:  var(--muted);
+  --color-rule:   var(--rule);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-hover);
+  --color-on-accent:   var(--on-accent);
 
   --font-sans:  'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+}
+
+/* Daylight palette */
+:root {
+  color-scheme: light;
+  --paper: #f6f3ed;
+  --tint: #efebe2;
+  --field: #fbfaf7;
+  --ink: #1d1c1a;
+  --muted: #5f5b53;
+  --rule: #d9d4c8;
+  --accent: #1f5d4a;
+  --accent-hover: #154436;
+  --on-accent: #ffffff;
+  --selection: #cfe3da;
+}
+
+/* Night palette */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #0e1311;
+  --tint: #141b18;
+  --field: #131a17;
+  --ink: #ebe7de;
+  --muted: #a3aaa3;
+  --rule: #26302b;
+  --accent: #5fc9a0;
+  --accent-hover: #86dcb9;
+  --on-accent: #0a1410;
+  --selection: #24493c;
 }
 
 @layer base {
@@ -27,7 +60,7 @@
   }
   h1, h2, h3 { text-wrap: balance; }
   p { text-wrap: pretty; }
-  ::selection { background: #cfe3da; }
+  ::selection { background: var(--selection); }
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 3px;

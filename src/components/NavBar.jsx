@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import ThemeToggle from './ThemeToggle.jsx'
 
 const navLinks = [
   { href: '#skills',         label: 'Skills',      id: 'skills'         },
@@ -38,7 +39,7 @@ export default function NavBar() {
     <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b border-rule">
       <nav aria-label="Primary" className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3 no-underline">
-          <span aria-hidden="true" className="w-8 h-8 grid place-items-center bg-accent text-paper font-serif text-[15px] leading-none">PB</span>
+          <span aria-hidden="true" className="w-8 h-8 grid place-items-center bg-accent text-on-accent font-serif text-[15px] leading-none">PB</span>
           <span className="font-serif text-xl">Prem Basnet</span>
         </a>
 
@@ -47,8 +48,9 @@ export default function NavBar() {
             <a key={l.id} href={l.href} className={linkClass(l.id)}>{l.label}</a>
           ))}
           <a href="/Prem-Basnet-CV.pdf" download className="py-1 no-underline border-b border-transparent hover:border-muted">CV</a>
+          <ThemeToggle />
           <a href="#contact"
-            className="px-4 py-1.5 bg-accent text-white no-underline hover:bg-accent-dark transition-colors">
+            className="px-4 py-1.5 bg-accent text-on-accent no-underline hover:bg-accent-dark transition-colors">
             Contact me
           </a>
         </div>
@@ -71,8 +73,9 @@ export default function NavBar() {
                 className="py-3 border-b border-rule no-underline">{l.label}</a>
             ))}
             <a href="/Prem-Basnet-CV.pdf" download className="py-3 border-b border-rule no-underline">Download CV</a>
+            <ThemeToggle className="py-3 border-b border-rule" />
             <a href="#contact" onClick={() => setOpen(false)}
-              className="mt-3 px-4 py-3 bg-accent text-white text-center no-underline">Contact me</a>
+              className="mt-3 px-4 py-3 bg-accent text-on-accent text-center no-underline">Contact me</a>
           </div>
         </div>
       )}

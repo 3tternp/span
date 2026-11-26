@@ -1,6 +1,6 @@
 export default function Section({ id, title, intro, tint = false, children }) {
   return (
-    <section id={id} className={`border-t border-rule py-16 md:py-20 ${tint ? 'bg-[#efebe2]' : ''}`}>
+    <section id={id} className={`border-t border-rule py-16 md:py-20 ${tint ? 'bg-tint' : ''}`}>
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-[220px_1fr] gap-6 lg:gap-16">
         <div>
           <h2 className="font-serif text-3xl md:text-4xl leading-tight">{title}</h2>
