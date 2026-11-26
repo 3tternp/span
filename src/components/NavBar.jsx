@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Download, Menu, X } from 'lucide-react'
 import logo from '../assets/img/logo.png'
 import { Linkedin, Github } from './SocialIcons.jsx'
 
@@ -139,6 +139,10 @@ export default function NavBar() {
                   {link.label}
                 </a>
               ))}
+              <a href="/Prem-Basnet-CV.pdf" download
+                className="flex items-center gap-2 py-3 text-[14px] font-medium text-white/70 hover:text-accent no-underline border-b border-white/5 transition-colors">
+                <Download size={15} aria-hidden="true" /> Download CV
+              </a>
               <div className="flex items-center gap-2 pt-4">
                 {socialLinks.map(({ href, Icon, label }) => (
                   <a key={label} href={href} target="_blank" rel="noopener noreferrer"

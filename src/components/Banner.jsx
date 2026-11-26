@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, MapPin } from 'lucide-react'
+import { ArrowRight, Download, MapPin } from 'lucide-react'
 import headerImg from '../assets/img/header-img.jpg'
 
 const ROLES = ['Information Security Officer', 'CSOC & SIEM Manager', 'GRC & IS Auditor']
@@ -137,6 +137,12 @@ export default function Banner() {
                   border-2 border-white/25 transition-all duration-300
                   hover:border-accent hover:text-accent hover:-translate-y-0.5 hover:bg-accent/10">
                 Get In Touch
+              </a>
+              <a href="/Prem-Basnet-CV.pdf" download
+                className="flex items-center gap-2 px-5 py-4 rounded-full font-semibold text-[16px] text-white/80 no-underline
+                  transition-colors duration-300 hover:text-accent">
+                <Download size={18} aria-hidden="true" />
+                Download CV
               </a>
             </motion.div>
 
