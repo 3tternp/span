@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import { HashLink } from 'react-router-hash-link'
 import logo from '../assets/img/logo.png'
 import { Linkedin, Github, Instagram, Facebook } from './SocialIcons.jsx'
 
@@ -28,12 +27,34 @@ export default function NavBar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Scroll-spy: highlight the section currently in the middle of the viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => e.isIntersecting && setActiveLink(e.target.id)),
+      { rootMargin: '-45% 0px -50% 0px' },
+    )
+    navLinks.forEach(({ id }) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
+  }, [])
+
+  // Close the mobile menu on Escape
+  useEffect(() => {
+    if (!mobileOpen) return
+    const onKey = e => e.key === 'Escape' && setMobileOpen(false)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [mobileOpen])
+
   return (
-    <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+    <nav aria-label="Primary" className={`fixed w-full top-0 z-50 transition-all duration-300 ${
       scrolled
         ? 'py-3 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/10'
         : 'py-5 bg-transparent backdrop-blur-sm'
@@ -41,7 +62,7 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
         {/* Logo */}
-        <a href="/" className="w-11 shrink-0 transition-transform hover:scale-105">
+        <a href="#home" aria-label="Home" className="w-11 shrink-0 transition-transform hover:scale-105">
           <img src={logo} alt="Prem Basnet" className="w-full" />
         </a>
 
@@ -81,14 +102,7 @@ export default function NavBar() {
               <Icon size={15} className="text-white/70 group-hover:text-accent transition-colors" />
             </a>
           ))}
-          <HashLink to="#contact" className="no-underline ml-2">
-            <button className="px-5 py-2.5 rounded-full font-bold text-[13px] tracking-wide text-[#0a0a0a]
-              bg-gradient-to-r from-accent to-accent-2
-              transition-all duration-300 hover:-translate-y-0.5
-              hover:shadow-[0_10px_28px_rgba(0,255,157,0.45)]">
-              Hire Me
-            </button>
-          </HashLink>
+          <a href="#contact" className="no-underline ml-2 px-5 py-2.5 rounded-full font-bold text-[13px] tracking-wide text-[#0a0a0a]               bg-gradient-to-r from-accent to-accent-2               transition-all duration-300 hover:-translate-y-0.5               hover:shadow-[0_10px_28px_rgba(0,255,157,0.45)]">Hire Me</a>
         </div>
 
         {/* Mobile hamburger */}
@@ -96,6 +110,8 @@ export default function NavBar() {
           className="md:hidden text-white/80 hover:text-accent transition-colors p-1"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -105,6 +121,7 @@ export default function NavBar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -132,12 +149,7 @@ export default function NavBar() {
                     <Icon size={15} className="text-white/70" />
                   </a>
                 ))}
-                <HashLink to="#contact" className="ml-auto no-underline">
-                  <button className="px-5 py-2 rounded-full font-bold text-[13px] text-[#0a0a0a]
-                    bg-gradient-to-r from-accent to-accent-2">
-                    Hire Me
-                  </button>
-                </HashLink>
+                <a href="#contact" onClick={() => setMobileOpen(false)} className="ml-auto no-underline px-5 py-2 rounded-full font-bold text-[13px] text-[#0a0a0a]                     bg-gradient-to-r from-accent to-accent-2">Hire Me</a>
               </div>
             </div>
           </motion.div>
