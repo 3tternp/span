@@ -5,8 +5,9 @@ export default function Banner() {
     <section id="top" className="pt-10 pb-12 md:pt-14 md:pb-16">
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center">
         <div>
+          <span aria-hidden="true" className="team-rule mb-6" />
           <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] tracking-tight mb-5 max-w-2xl">
-            I help organisations pass their audits and catch <span className="text-accent italic">real attacks</span>.
+            I help organisations pass their <span className="text-defense italic">audits</span> and catch <span className="text-offense italic">real attacks</span>.
           </h1>
           <p className="font-serif text-xl md:text-[1.4rem] leading-snug text-ink/85 mb-5 max-w-xl">
             Prem Basnet &middot; Cybersecurity Manager and ISO 27001:2022 Lead Auditor, working in
