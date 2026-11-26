@@ -1,6 +1,6 @@
+import { MotionConfig } from 'framer-motion'
 import NavBar from './components/NavBar.jsx'
 import Banner from './components/Banner.jsx'
-import Glance from './components/Glance.jsx'
 import Skills from './components/Skills.jsx'
 import Experience from './components/Experience.jsx'
 import Certifications from './components/Certifications.jsx'
@@ -10,16 +10,15 @@ import Footer from './components/Footer.jsx'
 
 export default function App() {
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <a href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60]
-          focus:px-4 focus:py-2 focus:bg-accent focus:text-white">
+          focus:px-4 focus:py-2 focus:rounded-md focus:bg-accent focus:text-[#0a0a0a] focus:font-bold">
         Skip to content
       </a>
       <NavBar />
       <main id="main">
         <Banner />
-        <Glance />
         <Skills />
         <Experience />
         <Certifications />
@@ -27,6 +26,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </MotionConfig>
   )
 }

@@ -1,42 +1,190 @@
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { ArrowRight, Download, MapPin } from 'lucide-react'
 import headerImg from '../assets/img/header-img.jpg'
 
-export default function Banner() {
-  return (
-    <section id="top" className="pt-10 pb-12 md:pt-14 md:pb-16">
-      <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center">
-        <div>
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] tracking-tight mb-5 max-w-2xl">
-            I help organisations pass their audits and catch real attacks.
-          </h1>
-          <p className="font-serif text-xl md:text-[1.4rem] leading-snug text-ink/85 mb-5 max-w-xl">
-            Prem Basnet &middot; Cybersecurity Manager and ISO 27001:2022 Lead Auditor, working in
-            GRC, IS audit and SIEM &amp; CSOC operations.
-          </p>
-          <p className="text-[17px] text-muted max-w-xl mb-7">
-            Ten years across IS audit, GRC, penetration testing and cloud security on AWS and Azure.
-            These days I run SIEM and CSOC operations, and I&apos;ve led ISO 27001 certification and
-            surveillance audits for clients across Nepal and Europe.
-          </p>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-            <a href="/Prem-Basnet-CV.pdf" download
-              className="px-5 py-2.5 bg-accent text-white no-underline hover:bg-accent-dark transition-colors">
-              Download CV
-            </a>
-            <a href="mailto:basnetprem524@gmail.com" className="underline underline-offset-4 decoration-rule hover:decoration-ink">Email me</a>
-            <a href="https://www.linkedin.com/in/prem-basnet524/" target="_blank" rel="noopener noreferrer"
-              className="underline underline-offset-4 decoration-rule hover:decoration-ink">LinkedIn</a>
-            <a href="https://github.com/3tternp" target="_blank" rel="noopener noreferrer"
-              className="underline underline-offset-4 decoration-rule hover:decoration-ink">GitHub</a>
-          </div>
-        </div>
+const ROLES = ['Cybersecurity Manager', 'GRC & IS Audit', 'SIEM & CSOC Operations']
 
-        <img
-          src={headerImg}
-          alt="Prem Basnet"
-          width="500" height="625"
-          fetchPriority="high"
-          className="w-full max-w-sm lg:ml-auto aspect-[4/5] object-cover object-top border border-rule"
-        />
+const stats = [
+  { value: '10',  label: 'Years Experience'      },
+  { value: '50+', label: 'Security Audits'        },
+  { value: '7',   label: 'Compliance Frameworks'  },
+  { value: '9',   label: 'Certifications'         },
+]
+
+function useTypewriter(items, period = 2000) {
+  const [state, setState] = useState({ index: 0, text: '', deleting: false })
+
+  useEffect(() => {
+    const full = items[state.index % items.length]
+    let delay = state.deleting ? 40 : 90
+    if (!state.deleting && state.text === full) delay = period
+    else if (state.deleting && state.text === '') delay = 400
+
+    const id = setTimeout(() => {
+      setState(s => {
+        const word = items[s.index % items.length]
+        if (!s.deleting && s.text === word) return { ...s, deleting: true }
+        if (s.deleting && s.text === '') return { index: s.index + 1, text: '', deleting: false }
+        return {
+          ...s,
+          text: s.deleting ? word.slice(0, s.text.length - 1) : word.slice(0, s.text.length + 1),
+        }
+      })
+    }, delay)
+    return () => clearTimeout(id)
+  }, [state, items, period])
+
+  return state.text
+}
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12 } },
+}
+const itemVariants = {
+  hidden:  { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+}
+
+export default function Banner() {
+  const typedText = useTypewriter(ROLES)
+
+  return (
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden"
+      style={{
+        paddingTop: '120px',
+        paddingBottom: '80px',
+        background: 'linear-gradient(135deg, rgba(10,10,10,0.97) 0%, rgba(13,25,18,0.95) 50%, rgba(15,36,23,0.97) 100%)',
+      }}
+    >
+      {/* radial glows */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-10"
+          style={{ background: 'radial-gradient(circle, #00FF9D 0%, transparent 70%)' }} />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-10"
+          style={{ background: 'radial-gradient(circle, #00B8FF 0%, transparent 70%)' }} />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 w-full">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+
+          {/* ── Left: Text ── */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* Available badge */}
+            <motion.div variants={itemVariants} className="mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-md
+                bg-green-400/[0.08] border border-green-400/25
+                font-mono text-[11px] font-bold text-green-400 tracking-[1.5px] uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot" />
+                Available for Consulting Engagements
+              </span>
+            </motion.div>
+
+
+            {/* Terminal prompt */}
+            <motion.div variants={itemVariants}>
+              <span className="block font-mono text-[13px] text-accent/85 tracking-tight mb-3">
+                <span className="text-accent-2">prem@security</span>:~$ whoami
+                <span className="inline-block w-2 h-[14px] ml-1 bg-accent align-[-2px] caret-blink" />
+              </span>
+            </motion.div>
+
+            {/* Name */}
+            <motion.h1 variants={itemVariants}
+              className="text-[58px] md:text-[68px] font-bold leading-[1.05] mb-4 gradient-text"
+              style={{ lineHeight: '1.08' }}>
+              Hi, I&apos;m<br />Prem Basnet
+            </motion.h1>
+
+            {/* Typewriter role */}
+            <motion.h2 variants={itemVariants} aria-label={ROLES.join(", ")}
+              className="text-[28px] md:text-[34px] font-bold mb-4 typewriter-cursor"
+              style={{ color: '#00FF9D', minHeight: '44px', display: 'block' }}>
+              {typedText}
+            </motion.h2>
+
+            {/* Location */}
+            <motion.div variants={itemVariants}
+              className="flex items-center gap-1.5 text-[13px] text-white/45 mb-5">
+              <MapPin size={13} className="text-accent shrink-0" />
+              Anamnagar, Kathmandu, Nepal
+            </motion.div>
+
+            {/* Bio */}
+            <motion.p variants={itemVariants}
+              className="text-[17px] leading-relaxed text-muted mb-8 max-w-[520px]">
+              Cybersecurity Manager and ISO 27001:2022 Lead Auditor with 10 years of experience in
+              cybersecurity, IS audit, GRC, penetration testing, and cloud security (AWS &amp; Azure). Skilled in
+              implementing security policies, conducting risk assessments, and ensuring compliance with
+              ISO 27001, SOC 2, PCI DSS, HIPAA, GDPR, NIST, and COBIT.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 mb-10">
+              <a href="#experience" className="no-underline flex items-center gap-2 px-7 py-4 rounded-full font-bold text-[16px] text-[#0a0a0a] bg-gradient-to-r from-accent to-accent-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,255,157,0.45)] group">
+                View Experience
+                <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+              </a>
+              <a href="#contact"
+                className="px-7 py-4 rounded-full font-semibold text-[16px] text-white no-underline
+                  border-2 border-white/25 transition-all duration-300
+                  hover:border-accent hover:text-accent hover:-translate-y-0.5 hover:bg-accent/10">
+                Get In Touch
+              </a>
+              <a href="/Prem-Basnet-CV.pdf" download
+                className="flex items-center gap-2 px-5 py-4 rounded-full font-semibold text-[16px] text-white/80 no-underline
+                  transition-colors duration-300 hover:text-accent">
+                <Download size={18} aria-hidden="true" />
+                Download CV
+              </a>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div variants={itemVariants}
+              className="flex flex-wrap items-center gap-6 pt-8 border-t border-white/10">
+              {stats.map((s, i) => (
+                <div key={i} className="flex items-center gap-6">
+                  <div className="text-center">
+                    <div className="text-[28px] font-bold gradient-text leading-none mb-1">{s.value}</div>
+                    <div className="font-mono text-[11px] text-muted uppercase tracking-wide whitespace-nowrap">{s.label}</div>
+                  </div>
+                  {i < stats.length - 1 && (
+                    <div className="w-px h-9 bg-white/15" />
+                  )}
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* ── Right: Image ── */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex justify-center"
+          >
+            <div className="float relative">
+              <div className="absolute -inset-4 rounded-[28px] opacity-40 blur-2xl"
+                style={{ background: 'linear-gradient(135deg, rgba(0,255,157,0.3), rgba(0,184,255,0.3))' }} />
+              <img
+                src={headerImg}
+                fetchPriority="high"
+                width="420"
+                alt="Prem Basnet – Cybersecurity Manager"
+                className="relative w-full max-w-[420px] rounded-[24px]"
+                style={{ boxShadow: '0 24px 64px rgba(0,0,0,0.5)' }}
+              />
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   )

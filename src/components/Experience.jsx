@@ -1,4 +1,5 @@
-import Section from './Section.jsx'
+import { motion } from 'framer-motion'
+import { Briefcase, GraduationCap } from 'lucide-react'
 
 const experiences = [
   {
@@ -102,66 +103,146 @@ const education = [
   { degree: '+2 Science (Computer)',                    institution: 'Ambition Academy H.S.S',             period: '2010 – 2012', status: 'Completed' },
 ]
 
-const RECENT = 4
-
-function Role({ exp }) {
-  return (
-    <article className="py-6 grid md:grid-cols-[170px_1fr] gap-2 md:gap-8">
-      <p className="text-[14px] text-muted">
-        {exp.period}
-        <span className="block">{exp.type}</span>
-      </p>
-      <div>
-        <h3 className="font-serif text-xl leading-snug">{exp.title}</h3>
-        <p className="text-muted mb-3">{exp.company}</p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[15px] marker:text-muted">
-          {exp.highlights.map((pt, j) => <li key={j}>{pt}</li>)}
-        </ul>
-      </div>
-    </article>
-  )
+const fadeUp = {
+  hidden:  { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
 }
 
 export default function Experience() {
-  const recent = experiences.slice(0, RECENT)
-  const earlier = experiences.slice(RECENT)
-
   return (
-    <Section id="experience" title="Experience"
-      intro="Ten years across security operations, IS audit, penetration testing and compliance.">
-      <p className="mb-6">
-        <a href="/Prem-Basnet-CV.pdf" download className="underline underline-offset-4 decoration-accent hover:decoration-ink">Download my CV (PDF)</a>
-      </p>
+    <section
+      id="experience"
+      className="py-28 relative"
+      style={{ background: 'linear-gradient(135deg, rgba(0,0,0,0.98) 0%, rgba(10,10,25,0.95) 100%)' }}
+    >
+      {/* subtle accent */}
+      <div className="pointer-events-none absolute top-0 right-0 w-96 h-96 rounded-full opacity-[0.07]"
+        style={{ background: 'radial-gradient(circle, #00FF9D 0%, transparent 70%)' }} />
 
-      <div className="divide-y divide-rule border-y border-rule">
-        {recent.map((exp, i) => <Role key={i} exp={exp} />)}
-      </div>
+      <div className="max-w-7xl mx-auto px-6">
 
-      <details className="group border-b border-rule">
-        <summary className="py-4 cursor-pointer list-none flex items-center justify-between
-          font-medium hover:text-accent">
-          <span>Earlier roles ({earlier.length}) · 2016 – 2022</span>
-          <span aria-hidden="true" className="text-muted group-open:rotate-45 transition-transform text-xl leading-none">+</span>
-        </summary>
-        <div className="divide-y divide-rule border-t border-rule">
-          {earlier.map((exp, i) => <Role key={i} exp={exp} />)}
+        {/* Section header */}
+        <motion.div
+          className="text-center mb-16"
+          initial="hidden" whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          variants={fadeUp}
+        >
+          <div className="section-label justify-center mb-4">&gt;&nbsp;Career History</div>
+          <h2 className="text-[42px] md:text-[50px] font-bold gradient-text mb-5">
+            Professional Experience
+          </h2>
+          <p className="text-muted text-[17px] leading-relaxed max-w-[640px] mx-auto">
+            10 years of progressive cybersecurity experience spanning security operations, IS auditing,
+            penetration testing, and compliance across multiple industries.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-[3fr_2fr] gap-12">
+
+          {/* Timeline */}
+          <div>
+            <h3 className="flex items-center gap-2 text-[20px] font-semibold text-white mb-8
+              pb-3 border-b border-white/10">
+              <Briefcase size={18} className="text-accent" /> Work History
+            </h3>
+
+            <div className="relative pl-8">
+              {/* vertical line */}
+              <div className="absolute left-[7px] top-1 bottom-0 w-px"
+                style={{ background: 'linear-gradient(180deg, #00FF9D 0%, rgba(0,184,255,0.3) 100%)' }} />
+
+              {experiences.map((exp, i) => (
+                <motion.div
+                  key={i}
+                  className="relative mb-7 last:mb-0"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
+                >
+                  {/* dot */}
+                  <div className="absolute -left-[25px] top-4 w-3.5 h-3.5 rounded-full pulse-ring
+                    border-2 border-[#0a0a0a]"
+                    style={{ background: 'linear-gradient(135deg, #00FF9D, #00B8FF)' }} />
+
+                  <motion.div
+                    className="rounded-2xl p-5 border border-white/[0.09] border-l-2
+                      transition-all duration-300 hover:shadow-[0_8px_28px_rgba(0,255,157,0.1)] group"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
+                      borderLeftColor: 'rgba(0,255,157,0.25)',
+                      backdropFilter: 'blur(10px)',
+                    }}
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex items-start justify-between gap-3 flex-wrap mb-1">
+                      <h4 className="text-[15px] font-bold text-white leading-tight">{exp.title}</h4>
+                      <span className="font-mono text-[11px] font-semibold text-accent whitespace-nowrap shrink-0">
+                        {exp.period}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-[13px] text-muted">{exp.company}</span>
+                      <span className="font-mono text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wide
+                        text-white/55 border border-accent-2/25 bg-accent-2/10">
+                        {exp.type}
+                      </span>
+                    </div>
+                    <ul className="space-y-1.5">
+                      {exp.highlights.map((pt, j) => (
+                        <li key={j} className="text-[13px] text-muted leading-relaxed pl-4 relative">
+                          <span className="absolute left-0 text-accent font-bold text-[16px] leading-[1.3]">›</span>
+                          {pt}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Education */}
+          <div>
+            <h3 className="flex items-center gap-2 text-[20px] font-semibold text-white mb-8
+              pb-3 border-b border-white/10">
+              <GraduationCap size={18} className="text-accent" /> Education
+            </h3>
+            <div className="flex flex-col gap-4">
+              {education.map((edu, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+                  className="rounded-2xl p-5 border border-white/[0.09]
+                    transition-all duration-300 hover:border-accent/30
+                    hover:shadow-[0_6px_20px_rgba(0,255,157,0.08)]"
+                  style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%)' }}
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <span className={`font-mono text-[10px] font-semibold px-2.5 py-1 rounded-full
+                      uppercase tracking-wider
+                      ${edu.status === 'Running'
+                        ? 'bg-accent/20 border border-accent/40 text-accent'
+                        : 'bg-white/10 border border-white/20 text-white/55'
+                      }`}>
+                      {edu.status}
+                    </span>
+                    <span className="font-mono text-[12px] text-muted">{edu.period}</span>
+                  </div>
+                  <h5 className="text-[14px] font-semibold text-white leading-snug mb-1.5">{edu.degree}</h5>
+                  <span className="text-[13px] text-muted">{edu.institution}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
         </div>
-      </details>
-
-      <h3 className="font-serif text-2xl mt-14 mb-4">Education</h3>
-      <ul className="divide-y divide-rule border-y border-rule">
-        {education.map((edu, i) => (
-          <li key={i} className="py-4 grid md:grid-cols-[170px_1fr] gap-1 md:gap-8">
-            <span className="text-[14px] text-muted">
-              {edu.period}{edu.status === 'Running' ? ' (ongoing)' : ''}
-            </span>
-            <span>
-              <span className="font-medium">{edu.degree}</span>
-              <span className="text-muted"> — {edu.institution}</span>
-            </span>
-          </li>
-        ))}
-      </ul>
-    </Section>
+      </div>
+    </section>
   )
 }
