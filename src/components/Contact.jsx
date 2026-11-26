@@ -40,6 +40,7 @@ export default function Contact() {
             <img
               src={contactImg}
               alt="Contact Prem Basnet"
+              loading="lazy"
               className="w-full max-w-[340px]"
               style={{ filter: 'drop-shadow(0 20px 40px rgba(0,255,157,0.3))' }}
             />

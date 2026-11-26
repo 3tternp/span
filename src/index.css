@@ -81,6 +81,15 @@
     -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
   }
 
+  :focus-visible {
+    outline: 2px solid #00FF9D;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .float, .glow, .pulse-dot, .pulse-ring, .caret-blink { animation: none; }
+  }
+
   #root {
     position: relative;
     z-index: 1;
@@ -170,5 +179,7 @@
   .typewriter-cursor {
     border-right: 2px solid #00FF9D;
     padding-right: 2px;
+    width: fit-content;
+    max-width: 100%;
   }
 }

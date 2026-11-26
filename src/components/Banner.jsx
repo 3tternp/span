@@ -13,30 +13,29 @@ const stats = [
 ]
 
 function useTypewriter(items, period = 2000) {
-  const [loopNum, setLoopNum] = useState(0)
-  const [isDeleting, setIsDeleting] = useState(false)
-  const [text, setText] = useState('')
-  const [delta, setDelta] = useState(150)
+  const [state, setState] = useState({ index: 0, text: '', deleting: false })
 
   useEffect(() => {
-    const tick = () => {
-      const i = loopNum % items.length
-      const full = items[i]
-      const updated = isDeleting
-        ? full.substring(0, text.length - 1)
-        : full.substring(0, text.length + 1)
+    const full = items[state.index % items.length]
+    let delay = state.deleting ? 40 : 90
+    if (!state.deleting && state.text === full) delay = period
+    else if (state.deleting && state.text === '') delay = 400
 
-      setText(updated)
+    const id = setTimeout(() => {
+      setState(s => {
+        const word = items[s.index % items.length]
+        if (!s.deleting && s.text === word) return { ...s, deleting: true }
+        if (s.deleting && s.text === '') return { index: s.index + 1, text: '', deleting: false }
+        return {
+          ...s,
+          text: s.deleting ? word.slice(0, s.text.length - 1) : word.slice(0, s.text.length + 1),
+        }
+      })
+    }, delay)
+    return () => clearTimeout(id)
+  }, [state, items, period])
 
-      if (isDeleting) setDelta(d => d / 2)
-      if (!isDeleting && updated === full) { setIsDeleting(true); setDelta(period) }
-      else if (isDeleting && updated === '') { setIsDeleting(false); setLoopNum(n => n + 1); setDelta(500) }
-    }
-    const ticker = setInterval(tick, delta)
-    return () => clearInterval(ticker)
-  }, [delta, loopNum, isDeleting, text, items, period])
-
-  return text
+  return state.text
 }
 
 const containerVariants = {
@@ -113,7 +112,7 @@ export default function Banner() {
             </motion.h1>
 
             {/* Typewriter role */}
-            <motion.h2 variants={itemVariants}
+            <motion.h2 variants={itemVariants} aria-label={ROLES.join(", ")}
               className="text-[28px] md:text-[34px] font-bold mb-4 typewriter-cursor"
               style={{ color: '#00FF9D', minHeight: '44px', display: 'block' }}>
               {typedText}
@@ -137,16 +136,10 @@ export default function Banner() {
 
             {/* CTAs */}
             <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 mb-10">
-              <button
-                onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
-                className="flex items-center gap-2 px-7 py-4 rounded-full font-bold text-[16px] text-[#0a0a0a]
-                  bg-gradient-to-r from-accent to-accent-2
-                  transition-all duration-300 hover:-translate-y-1
-                  hover:shadow-[0_15px_40px_rgba(0,255,157,0.45)] group"
-              >
+              <a href="#experience" className="no-underline flex items-center gap-2 px-7 py-4 rounded-full font-bold text-[16px] text-[#0a0a0a] bg-gradient-to-r from-accent to-accent-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,255,157,0.45)] group">
                 View Experience
                 <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-              </button>
+              </a>
               <a href="#contact"
                 className="px-7 py-4 rounded-full font-semibold text-[16px] text-white no-underline
                   border-2 border-white/25 transition-all duration-300
@@ -184,6 +177,8 @@ export default function Banner() {
                 style={{ background: 'linear-gradient(135deg, rgba(0,255,157,0.3), rgba(0,184,255,0.3))' }} />
               <img
                 src={headerImg}
+                fetchPriority="high"
+                width="420"
                 alt="Prem Basnet – Information Security Officer"
                 className="relative w-full max-w-[420px] rounded-[24px]"
                 style={{ boxShadow: '0 24px 64px rgba(0,0,0,0.5)' }}
