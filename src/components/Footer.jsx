@@ -31,7 +31,7 @@ export default function Footer() {
           <div>
             <h3 className="text-[22px] font-bold gradient-text mb-2">Prem Basnet</h3>
             <p className="font-mono text-[12px] text-accent mb-4 uppercase tracking-widest">
-              Information Security Officer &amp; Auditor
+              Cybersecurity Manager
             </p>
             <p className="text-[14px] text-muted leading-relaxed mb-6">
               Protecting digital assets through rigorous security assessments, strategic compliance
