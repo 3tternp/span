@@ -9,7 +9,6 @@ Anamnagar, Kathmandu, Nepal &nbsp;·&nbsp; basnetprem524@gmail.com &nbsp;·&nbsp
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-FF6B6B?style=flat-square)](https://www.framer.com/motion/)
 [![Live Site](https://img.shields.io/badge/Live%20Site-basnetprem.com.np-00FF9D?style=flat-square&logo=vercel&logoColor=black)](https://basnetprem.com.np)
 
 <br/>
