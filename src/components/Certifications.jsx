@@ -14,23 +14,42 @@ const certifications = [
   { name: 'EC-Council Certified Security Analyst (ECSA)', issuer: 'EC-Council',        category: 'Penetration Testing'              },
 ]
 
+function Badge() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
+      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" /><path d="M9 12l2 2 4-4" />
+    </svg>
+  )
+}
+
 export default function Certifications() {
   return (
-    <Section id="certifications" title="Credentials" tint
+    <Section id="certifications" label="Credentials" title="Certifications"
       intro="Certifications in security management, offensive security, cloud and compliance.">
-      <ul className="divide-y divide-rule border-y border-rule">
-        {certifications.map(c => (
-          <li key={c.name} className="py-4 grid md:grid-cols-[1fr_auto] gap-x-8 gap-y-0.5">
-            <span className="font-medium">
+      <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {certifications.map(c => {
+          const inner = (
+            <>
+              <span className="shrink-0 w-11 h-11 rounded-xl grid place-items-center text-accent border border-rule bg-paper/40"><Badge /></span>
+              <span className="min-w-0">
+                <span className="block font-medium leading-snug mb-1">{c.name}</span>
+                <span className="block font-mono text-[12px] text-accent mb-0.5">{c.issuer}</span>
+                <span className="block text-[13px] text-muted">{c.category}</span>
+                {c.url && <span className="block font-mono text-[12px] mt-2 text-defense">verify credential &nearr;</span>}
+              </span>
+            </>
+          )
+          return (
+            <li key={c.name} className="contents">
               {c.url
                 ? <a href={c.url} target="_blank" rel="noopener noreferrer"
-                    className="underline underline-offset-4 decoration-rule hover:decoration-ink">{c.name}</a>
-                : c.name}
-            </span>
-            <span className="text-[14px] text-muted">{c.issuer}</span>
-            <span className="text-[14px] text-muted md:col-span-2">{c.category}</span>
-          </li>
-        ))}
+                    aria-label={`Verify ${c.name} (opens in a new tab)`}
+                    className="glass flex items-start gap-4 p-5 no-underline">{inner}</a>
+                : <div className="glass flex items-start gap-4 p-5">{inner}</div>}
+            </li>
+          )
+        })}
       </ul>
     </Section>
   )

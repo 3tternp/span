@@ -13,7 +13,7 @@ export default function App() {
     <>
       <a href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60]
-          focus:px-4 focus:py-2 focus:bg-accent focus:text-on-accent">
+          focus:px-4 focus:py-2 focus:bg-accent focus:text-on-accent focus:rounded">
         Skip to content
       </a>
       <NavBar />

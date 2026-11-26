@@ -19,7 +19,8 @@ export default function NavBar() {
       entries => entries.forEach(e => e.isIntersecting && setActive(e.target.id)),
       { rootMargin: '-45% 0px -50% 0px' },
     )
-    navLinks.forEach(({ id }) => {
+    // 'contact' has no nav link (it is the Contact me button) but still clears the highlight
+    ;[...navLinks.map(l => l.id), 'contact'].forEach(id => {
       const el = document.getElementById(id)
       if (el) observer.observe(el)
     })
@@ -37,7 +38,7 @@ export default function NavBar() {
     `py-1 no-underline border-b ${active === id ? 'border-ink' : 'border-transparent hover:border-muted'}`
 
   return (
-    <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b border-rule">
+    <header className="sticky top-0 z-50 bg-paper/80 backdrop-blur-xl border-b border-rule">
       <nav aria-label="Primary" className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3 no-underline">
           <img src={logo} alt="" width="44" height="44" className="w-11 h-11 -my-1" />
@@ -51,7 +52,7 @@ export default function NavBar() {
           <a href="/Prem-Basnet-CV.pdf" download className="py-1 no-underline border-b border-transparent hover:border-muted">CV</a>
           <ThemeToggle />
           <a href="#contact"
-            className="px-4 py-1.5 bg-accent text-on-accent no-underline hover:bg-accent-dark transition-colors">
+            className="btn-glow px-4 py-1.5 rounded-full text-[14px] font-semibold no-underline">
             Contact me
           </a>
         </div>
@@ -76,7 +77,7 @@ export default function NavBar() {
             <a href="/Prem-Basnet-CV.pdf" download className="py-3 border-b border-rule no-underline">Download CV</a>
             <ThemeToggle className="py-3 border-b border-rule" />
             <a href="#contact" onClick={() => setOpen(false)}
-              className="mt-3 px-4 py-3 bg-accent text-on-accent text-center no-underline">Contact me</a>
+              className="btn-glow mt-3 px-4 py-3 rounded-full font-semibold text-center no-underline">Contact me</a>
           </div>
         </div>
       )}

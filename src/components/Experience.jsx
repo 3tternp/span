@@ -106,19 +106,27 @@ const RECENT = 4
 
 function Role({ exp }) {
   return (
-    <article className="py-6 grid md:grid-cols-[170px_1fr] gap-2 md:gap-8">
-      <p className="text-[14px] text-muted">
-        {exp.period}
-        <span className="block">{exp.type}</span>
-      </p>
-      <div>
-        <h3 className="font-serif text-xl leading-snug">{exp.title}</h3>
-        <p className="text-muted mb-3">{exp.company}</p>
-        <ul className="list-disc pl-5 space-y-1.5 text-[15px] marker:text-muted">
-          {exp.highlights.map((pt, j) => <li key={j}>{pt}</li>)}
+    <li className="relative pl-9 pb-8 last:pb-0">
+      <span aria-hidden="true" className="absolute left-0 top-2 w-3.5 h-3.5 rounded-full bg-accent ring-4 ring-paper"
+        style={{ boxShadow: '0 0 14px 2px color-mix(in srgb, var(--accent) 60%, transparent)' }} />
+      <article className="glass p-5">
+        <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1 mb-1">
+          <h3 className="font-serif text-xl leading-snug">{exp.title}</h3>
+          <span className="font-mono text-[12px] text-accent whitespace-nowrap">{exp.period}</span>
+        </div>
+        <p className="text-muted mb-3">
+          {exp.company} <span className="font-mono text-[11px] uppercase tracking-wider ml-1 px-2 py-0.5 rounded-full border border-rule">{exp.type}</span>
+        </p>
+        <ul className="space-y-1.5 text-[15px]">
+          {exp.highlights.map((pt, j) => (
+            <li key={j} className="relative pl-5">
+              <span aria-hidden="true" className="absolute left-0 text-accent font-mono">&rsaquo;</span>
+              {pt}
+            </li>
+          ))}
         </ul>
-      </div>
-    </article>
+      </article>
+    </li>
   )
 }
 
@@ -127,41 +135,50 @@ export default function Experience() {
   const earlier = experiences.slice(RECENT)
 
   return (
-    <Section id="experience" title="Experience"
+    <Section id="experience" label="Career history" title="Professional experience"
       intro="Ten years across security operations, IS audit, penetration testing and compliance.">
-      <p className="mb-6">
-        <a href="/Prem-Basnet-CV.pdf" download className="underline underline-offset-4 decoration-accent hover:decoration-ink">Download my CV (PDF)</a>
-      </p>
+      <div className="grid lg:grid-cols-[1.7fr_1fr] gap-10">
+        <div>
+          <p className="mb-6 font-mono text-[13px]">
+            <a href="/Prem-Basnet-CV.pdf" download className="text-accent underline underline-offset-4">&darr; download my CV (PDF)</a>
+          </p>
+          <div className="relative">
+            <span aria-hidden="true" className="absolute left-[6px] top-3 bottom-3 w-px"
+              style={{ background: 'linear-gradient(180deg, var(--offense), var(--accent) 50%, var(--defense))', opacity: 0.55 }} />
+            <ol className="relative">
+              {recent.map((exp, i) => <Role key={i} exp={exp} />)}
+            </ol>
 
-      <div className="divide-y divide-rule border-y border-rule">
-        {recent.map((exp, i) => <Role key={i} exp={exp} />)}
-      </div>
-
-      <details className="group border-b border-rule">
-        <summary className="py-4 cursor-pointer list-none flex items-center justify-between
-          font-medium hover:text-accent">
-          <span>Earlier roles ({earlier.length}) · 2016 – 2022</span>
-          <span aria-hidden="true" className="text-muted group-open:rotate-45 transition-transform text-xl leading-none">+</span>
-        </summary>
-        <div className="divide-y divide-rule border-t border-rule">
-          {earlier.map((exp, i) => <Role key={i} exp={exp} />)}
+            <details className="group relative pl-9 mt-8">
+              <summary className="glass cursor-pointer list-none px-5 py-3.5 flex items-center justify-between font-mono text-[13px] hover:text-accent">
+                <span>earlier roles ({earlier.length}) · 2016 – 2022</span>
+                <span aria-hidden="true" className="text-xl leading-none transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <ol className="relative mt-8">
+                {earlier.map((exp, i) => <Role key={i} exp={exp} />)}
+              </ol>
+            </details>
+          </div>
         </div>
-      </details>
 
-      <h3 className="font-serif text-2xl mt-14 mb-4">Education</h3>
-      <ul className="divide-y divide-rule border-y border-rule">
-        {education.map((edu, i) => (
-          <li key={i} className="py-4 grid md:grid-cols-[170px_1fr] gap-1 md:gap-8">
-            <span className="text-[14px] text-muted">
-              {edu.period}{edu.status === 'Running' ? ' (ongoing)' : ''}
-            </span>
-            <span>
-              <span className="font-medium">{edu.degree}</span>
-              <span className="text-muted"> — {edu.institution}</span>
-            </span>
-          </li>
-        ))}
-      </ul>
+        <aside>
+          <h3 className="font-mono text-[12px] uppercase tracking-[0.2em] text-accent mb-5">Education</h3>
+          <ul className="space-y-4">
+            {education.map((edu, i) => (
+              <li key={i} className="glass p-5">
+                <div className="flex items-center justify-between mb-2">
+                  <span className={`font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full border ${edu.status === 'Running' ? 'border-accent text-accent' : 'border-rule text-muted'}`}>
+                    {edu.status === 'Running' ? 'ongoing' : 'completed'}
+                  </span>
+                  <span className="font-mono text-[12px] text-muted">{edu.period}</span>
+                </div>
+                <p className="font-medium leading-snug">{edu.degree}</p>
+                <p className="text-muted text-[14px]">{edu.institution}</p>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      </div>
     </Section>
   )
 }
