@@ -4,8 +4,7 @@ const navLinks = [
   { href: '#skills',         label: 'Skills',      id: 'skills'         },
   { href: '#experience',     label: 'Experience',  id: 'experience'     },
   { href: '#certifications', label: 'Credentials', id: 'certifications' },
-  { href: '#projects',       label: 'Work',        id: 'projects'       },
-  { href: '#contact',        label: 'Contact',     id: 'contact'        },
+  { href: '#projects',       label: 'How I can help',        id: 'projects'       },
 ]
 
 export default function NavBar() {
@@ -44,9 +43,10 @@ export default function NavBar() {
           {navLinks.map(l => (
             <a key={l.id} href={l.href} className={linkClass(l.id)}>{l.label}</a>
           ))}
-          <a href="/Prem-Basnet-CV.pdf" download
-            className="px-4 py-1.5 border border-ink no-underline hover:bg-ink hover:text-paper transition-colors">
-            CV
+          <a href="/Prem-Basnet-CV.pdf" download className="py-1 no-underline border-b border-transparent hover:border-muted">CV</a>
+          <a href="#contact"
+            className="px-4 py-1.5 bg-accent text-white no-underline hover:bg-accent-dark transition-colors">
+            Contact me
           </a>
         </div>
 
@@ -67,7 +67,9 @@ export default function NavBar() {
               <a key={l.id} href={l.href} onClick={() => setOpen(false)}
                 className="py-3 border-b border-rule no-underline">{l.label}</a>
             ))}
-            <a href="/Prem-Basnet-CV.pdf" download className="py-3 no-underline">Download CV</a>
+            <a href="/Prem-Basnet-CV.pdf" download className="py-3 border-b border-rule no-underline">Download CV</a>
+            <a href="#contact" onClick={() => setOpen(false)}
+              className="mt-3 px-4 py-3 bg-accent text-white text-center no-underline">Contact me</a>
           </div>
         </div>
       )}

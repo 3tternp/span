@@ -6,8 +6,8 @@ const field =
 export default function Contact() {
   return (
     <Section id="contact" title="Contact"
-      intro="Have a security or compliance requirement? Send a note.">
-      <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12">
+      intro="Hiring, or have a security or compliance requirement? Email is the quickest way to reach me.">
+      <div className="grid xl:grid-cols-[1fr_1.4fr] gap-12">
         <dl className="space-y-5">
           <div>
             <dt className="text-[14px] text-muted">Email</dt>
@@ -27,19 +27,21 @@ export default function Contact() {
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_next" value="https://basnetprem.com.np/thank-you.html" />
           <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_subject" value="New message from basnetprem.com.np" />
+          <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
 
           <div className="grid sm:grid-cols-2 gap-4">
             <label className="block text-[14px] text-muted">First name
-              <input type="text" name="First Name" required className={`${field} mt-1 text-ink`} />
+              <input type="text" name="First Name" autoComplete="given-name" required className={`${field} mt-1 text-ink`} />
             </label>
             <label className="block text-[14px] text-muted">Last name
-              <input type="text" name="Last Name" required className={`${field} mt-1 text-ink`} />
+              <input type="text" name="Last Name" autoComplete="family-name" required className={`${field} mt-1 text-ink`} />
             </label>
             <label className="block text-[14px] text-muted">Email
-              <input type="email" name="Email" required className={`${field} mt-1 text-ink`} />
+              <input type="email" name="Email" autoComplete="email" required className={`${field} mt-1 text-ink`} />
             </label>
             <label className="block text-[14px] text-muted">Phone (optional)
-              <input type="tel" name="Phone" className={`${field} mt-1 text-ink`} />
+              <input type="tel" name="Phone" autoComplete="tel" className={`${field} mt-1 text-ink`} />
             </label>
           </div>
           <label className="block text-[14px] text-muted">Message
