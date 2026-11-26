@@ -33,5 +33,5 @@ export function resolve(mode) {
 export function applyTheme(theme) {
   document.documentElement.dataset.theme = theme
   const meta = document.querySelector('meta[name="theme-color"]')
-  if (meta) meta.setAttribute('content', theme === 'dark' ? '#0e1311' : '#f6f3ed')
+  if (meta) meta.setAttribute('content', theme === 'dark' ? '#0f0d16' : '#f6f4fa')
 }

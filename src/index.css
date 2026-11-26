@@ -10,39 +10,52 @@
   --color-accent: var(--accent);
   --color-accent-dark: var(--accent-hover);
   --color-on-accent:   var(--on-accent);
+  --color-offense: var(--offense);
+  --color-defense: var(--defense);
 
   --font-sans:  'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
 }
 
-/* Daylight palette */
+/*
+ * Purple team palette
+ *   purple = the brand colour (where offence and defence meet)
+ *   red    = offensive work (red team)
+ *   blue   = defensive work (blue team)
+ */
+
+/* Daylight */
 :root {
   color-scheme: light;
-  --paper: #f6f3ed;
-  --tint: #efebe2;
-  --field: #fbfaf7;
-  --ink: #1d1c1a;
-  --muted: #5f5b53;
-  --rule: #d9d4c8;
-  --accent: #1f5d4a;
-  --accent-hover: #154436;
+  --paper: #f6f4fa;
+  --tint: #edeaf5;
+  --field: #fcfbfe;
+  --ink: #1b1826;
+  --muted: #5a5670;
+  --rule: #d8d3e6;
+  --accent: #5b3fa0;
+  --accent-hover: #46308a;
   --on-accent: #ffffff;
-  --selection: #cfe3da;
+  --offense: #b3363f;
+  --defense: #2a5db0;
+  --selection: #e0d8f5;
 }
 
-/* Night palette */
+/* Night */
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: #0e1311;
-  --tint: #141b18;
-  --field: #131a17;
-  --ink: #ebe7de;
-  --muted: #a3aaa3;
-  --rule: #26302b;
-  --accent: #5fc9a0;
-  --accent-hover: #86dcb9;
-  --on-accent: #0a1410;
-  --selection: #24493c;
+  --paper: #0f0d16;
+  --tint: #161321;
+  --field: #14111e;
+  --ink: #ece9f3;
+  --muted: #a9a4b8;
+  --rule: #2a2538;
+  --accent: #b79cff;
+  --accent-hover: #cdb8ff;
+  --on-accent: #140d26;
+  --offense: #ff7b85;
+  --defense: #7fb2ff;
+  --selection: #3a2f66;
 }
 
 @layer base {
@@ -64,5 +77,15 @@
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Short brand rule: red (offence) -> purple -> blue (defence) */
+  .team-rule {
+    display: block;
+    width: 64px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--offense) 0 33.33%, var(--accent) 33.33% 66.66%, var(--defense) 66.66% 100%);
   }
 }

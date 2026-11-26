@@ -58,7 +58,7 @@ Home → Skills → Experience → Certifications → Work → Contact
 | **Framework** | [React 19](https://reactjs.org/) |
 | **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) (`@tailwindcss/vite`) |
 | **Contact Form** | [Formsubmit.co](https://formsubmit.co/) (zero-backend) |
-| **Theme** | Light by day (06:00–18:00 local time), dark at night; a nav toggle cycles Auto / Light / Dark and remembers the choice |
+| **Theme** | Purple team palette (purple brand, red = offence, blue = defence). Light by day (06:00–18:00 local time), dark at night; a nav toggle cycles Auto / Light / Dark and remembers the choice |
 | **Fonts** | Newsreader (headings) · IBM Plex Sans (body), via Google Fonts |
 
 ---
