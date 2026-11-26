@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import ThemeToggle from './ThemeToggle.jsx'
+import logo from '../assets/img/logo.png'
 
 const navLinks = [
   { href: '#skills',         label: 'Skills',      id: 'skills'         },
@@ -39,7 +40,7 @@ export default function NavBar() {
     <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b border-rule">
       <nav aria-label="Primary" className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3 no-underline">
-          <span aria-hidden="true" className="w-8 h-8 grid place-items-center bg-accent text-on-accent font-serif text-[15px] leading-none">PB</span>
+          <img src={logo} alt="" width="44" height="44" className="w-11 h-11 -my-1" />
           <span className="font-serif text-xl">Prem Basnet</span>
         </a>
 
