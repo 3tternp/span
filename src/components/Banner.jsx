@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, MapPin } from 'lucide-react'
+import { ArrowRight, Download, MapPin } from 'lucide-react'
 import headerImg from '../assets/img/header-img.jpg'
 
-const ROLES = ['Information Security Officer', 'CSOC & SIEM Manager', 'GRC & IS Auditor']
+const ROLES = ['Cybersecurity Manager', 'GRC & IS Audit', 'SIEM & CSOC Operations']
 
 const stats = [
-  { value: '9+',  label: 'Years Experience'      },
+  { value: '10',  label: 'Years Experience'      },
   { value: '50+', label: 'Security Audits'        },
   { value: '7',   label: 'Compliance Frameworks'  },
   { value: '9',   label: 'Certifications'         },
@@ -120,8 +120,8 @@ export default function Banner() {
             {/* Bio */}
             <motion.p variants={itemVariants}
               className="text-[17px] leading-relaxed text-muted mb-8 max-w-[520px]">
-              Information Security Officer &amp; Auditor with 9+ years of experience in cybersecurity,
-              IS audit, GRC, penetration testing, and cloud security (AWS &amp; Azure). Skilled in
+              Cybersecurity Manager and ISO 27001:2022 Lead Auditor with 10 years of experience in
+              cybersecurity, IS audit, GRC, penetration testing, and cloud security (AWS &amp; Azure). Skilled in
               implementing security policies, conducting risk assessments, and ensuring compliance with
               ISO 27001, SOC 2, PCI DSS, HIPAA, GDPR, NIST, and COBIT.
             </motion.p>
@@ -137,6 +137,12 @@ export default function Banner() {
                   border-2 border-white/25 transition-all duration-300
                   hover:border-accent hover:text-accent hover:-translate-y-0.5 hover:bg-accent/10">
                 Get In Touch
+              </a>
+              <a href="/Prem-Basnet-CV.pdf" download
+                className="flex items-center gap-2 px-5 py-4 rounded-full font-semibold text-[16px] text-white/80 no-underline
+                  transition-colors duration-300 hover:text-accent">
+                <Download size={18} aria-hidden="true" />
+                Download CV
               </a>
             </motion.div>
 
@@ -171,7 +177,7 @@ export default function Banner() {
                 src={headerImg}
                 fetchPriority="high"
                 width="420"
-                alt="Prem Basnet – Information Security Officer"
+                alt="Prem Basnet – Cybersecurity Manager"
                 className="relative w-full max-w-[420px] rounded-[24px]"
                 style={{ boxShadow: '0 24px 64px rgba(0,0,0,0.5)' }}
               />
