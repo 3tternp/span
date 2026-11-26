@@ -6,7 +6,7 @@ import headerImg from '../assets/img/header-img.jpg'
 const ROLES = ['Information Security Officer', 'CSOC & SIEM Manager', 'GRC & IS Auditor']
 
 const stats = [
-  { value: '9+',  label: 'Years Experience'      },
+  { value: '10',  label: 'Years Experience'      },
   { value: '50+', label: 'Security Audits'        },
   { value: '7',   label: 'Compliance Frameworks'  },
   { value: '9',   label: 'Certifications'         },
@@ -120,7 +120,7 @@ export default function Banner() {
             {/* Bio */}
             <motion.p variants={itemVariants}
               className="text-[17px] leading-relaxed text-muted mb-8 max-w-[520px]">
-              Information Security Officer &amp; Auditor with 9+ years of experience in cybersecurity,
+              Information Security Officer &amp; Auditor with 10 years of experience in cybersecurity,
               IS audit, GRC, penetration testing, and cloud security (AWS &amp; Azure). Skilled in
               implementing security policies, conducting risk assessments, and ensuring compliance with
               ISO 27001, SOC 2, PCI DSS, HIPAA, GDPR, NIST, and COBIT.

@@ -22,7 +22,7 @@ Anamnagar, Kathmandu, Nepal &nbsp;·&nbsp; basnetprem524@gmail.com &nbsp;·&nbsp
 
 ## About
 
-A fully responsive, professional dark-themed portfolio website for **Prem Basnet** — built with React and showcasing 9+ years of cybersecurity expertise across information security auditing, GRC, offensive security, and cloud security.
+A fully responsive, professional dark-themed portfolio website for **Prem Basnet** — built with React and showcasing 10 years of cybersecurity expertise across information security auditing, GRC, offensive security, and cloud security.
 
 | Domain | Details |
 |---|---|

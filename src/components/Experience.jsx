@@ -8,7 +8,7 @@ const experiences = [
     period: 'January 2026 – Present',
     type: 'Full-time',
     highlights: [
-      'Lead SIEM operations and CSOC monitoring for European client environments, mirroring the SIEM & CSOC manager role at Vairav Technology',
+      'Lead SIEM operations and CSOC monitoring for European client environments, working remotely with a distributed international team',
       'Configure and optimize SIEM use cases, correlation rules, and threat detection workflows',
       'Oversee incident triage, investigation, and coordinated remediation across distributed teams',
       'Deliver security metrics, incident reporting, and compliance dashboards to international stakeholders',
@@ -133,7 +133,7 @@ export default function Experience() {
             Professional Experience
           </h2>
           <p className="text-muted text-[17px] leading-relaxed max-w-[640px] mx-auto">
-            9+ years of progressive cybersecurity experience spanning security operations, IS auditing,
+            10 years of progressive cybersecurity experience spanning security operations, IS auditing,
             penetration testing, and compliance across multiple industries.
           </p>
         </motion.div>
