@@ -6,7 +6,7 @@ const field =
 export default function Contact() {
   return (
     <Section id="contact" title="Contact"
-      intro="Have a security or compliance requirement? Send a note.">
+      intro="Hiring, or have a security or compliance requirement? Email is the quickest way to reach me.">
       <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12">
         <dl className="space-y-5">
           <div>
@@ -27,6 +27,8 @@ export default function Contact() {
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_next" value="https://basnetprem.com.np/thank-you.html" />
           <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_subject" value="New message from basnetprem.com.np" />
+          <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
 
           <div className="grid sm:grid-cols-2 gap-4">
             <label className="block text-[14px] text-muted">First name

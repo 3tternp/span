@@ -35,8 +35,8 @@ const projects = [
 
 export default function Projects() {
   return (
-    <Section id="projects" title="Work"
-      intro="The kinds of engagements I take on.">
+    <Section id="projects" title="How I can help"
+      intro="The kinds of work I take on, as an employee or as a consultant.">
       <ol className="divide-y divide-rule border-y border-rule">
         {projects.map(p => (
           <li key={p.title} className="py-6">
@@ -46,6 +46,10 @@ export default function Projects() {
           </li>
         ))}
       </ol>
+      <p className="mt-8">
+        Have something like this on your plate?{' '}
+        <a href="#contact" className="underline underline-offset-4 decoration-accent hover:decoration-ink">Tell me about it</a>.
+      </p>
     </Section>
   )
 }

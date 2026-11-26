@@ -1,5 +1,6 @@
 import NavBar from './components/NavBar.jsx'
 import Banner from './components/Banner.jsx'
+import Glance from './components/Glance.jsx'
 import Skills from './components/Skills.jsx'
 import Experience from './components/Experience.jsx'
 import Certifications from './components/Certifications.jsx'
@@ -18,6 +19,7 @@ export default function App() {
       <NavBar />
       <main id="main">
         <Banner />
+        <Glance />
         <Skills />
         <Experience />
         <Certifications />

@@ -106,6 +106,9 @@ export default function Experience() {
   return (
     <Section id="experience" title="Experience"
       intro="Ten years across security operations, IS audit, penetration testing and compliance.">
+      <p className="mb-6">
+        <a href="/Prem-Basnet-CV.pdf" download className="underline underline-offset-4 decoration-accent hover:decoration-ink">Download my CV (PDF)</a>
+      </p>
       <div className="divide-y divide-rule border-y border-rule">
         {experiences.map((exp, i) => (
           <article key={i} className="py-6 grid md:grid-cols-[170px_1fr] gap-2 md:gap-8">

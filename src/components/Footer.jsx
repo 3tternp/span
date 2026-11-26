@@ -6,6 +6,7 @@ export default function Footer() {
         <p className="flex gap-5">
           <a href="https://www.linkedin.com/in/prem-basnet524/" target="_blank" rel="noopener noreferrer" className="hover:text-ink">LinkedIn</a>
           <a href="https://github.com/3tternp" target="_blank" rel="noopener noreferrer" className="hover:text-ink">GitHub</a>
+          <a href="mailto:basnetprem524@gmail.com" className="hover:text-ink">Email</a>
           <a href="/Prem-Basnet-CV.pdf" download className="hover:text-ink">CV</a>
         </p>
       </div>
