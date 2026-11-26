@@ -1,11 +1,11 @@
 import Section from './Section.jsx'
 
 const field =
-  'w-full px-3 py-2.5 bg-white/70 border border-rule rounded-sm focus:border-accent focus:outline-none'
+  'w-full px-3 py-2.5 bg-field border border-rule rounded-sm focus:border-accent focus:outline-none'
 
 export default function Contact() {
   return (
-    <Section id="contact" title="Contact"
+    <Section id="contact" title="Contact" tint
       intro="Hiring, or have a security or compliance requirement? Email is the quickest way to reach me.">
       <div className="grid xl:grid-cols-[1fr_1.4fr] gap-12">
         <dl className="space-y-5">
@@ -48,7 +48,7 @@ export default function Contact() {
             <textarea rows={6} name="Message" required className={`${field} mt-1 text-ink resize-y`} />
           </label>
           <button type="submit"
-            className="px-5 py-2.5 bg-accent text-white hover:bg-accent-dark transition-colors">
+            className="px-5 py-2.5 bg-accent text-on-accent hover:bg-accent-dark transition-colors">
             Send message
           </button>
         </form>

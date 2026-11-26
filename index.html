@@ -6,6 +6,18 @@
     <link rel="apple-touch-icon" href="/logo192.png" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Pick the theme before first paint: saved choice, else daylight (06:00-18:00 light, otherwise dark)
+      (function () {
+        var t = 'light';
+        try {
+          var s = localStorage.getItem('theme');
+          if (s === 'light' || s === 'dark') t = s;
+          else { var h = new Date().getHours(); t = h >= 6 && h < 18 ? 'light' : 'dark'; }
+        } catch (e) {}
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
     <meta name="theme-color" content="#f6f3ed" />
     <meta
       name="description"
@@ -17,7 +29,9 @@
     <meta property="og:description" content="Cybersecurity Manager | GRC & IS Audit | SIEM & CSOC Operations with 10 years in cybersecurity, GRC, penetration testing, and cloud security." />
     <meta property="og:url" content="https://basnetprem.com.np/" />
     <meta property="og:image" content="https://basnetprem.com.np/og.jpg" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://basnetprem.com.np/og.jpg" />
     <link rel="canonical" href="https://basnetprem.com.np/" />
     <script type="application/ld+json">
@@ -33,7 +47,7 @@
         "knowsAbout": ["ISO 27001", "IS audit", "GRC", "SIEM", "Penetration testing", "Cloud security"]
       }
     </script>
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="author" content="Prem Basnet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

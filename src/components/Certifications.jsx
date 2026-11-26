@@ -16,7 +16,7 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <Section id="certifications" title="Credentials"
+    <Section id="certifications" title="Credentials" tint
       intro="Certifications in security management, offensive security, cloud and compliance.">
       <ul className="divide-y divide-rule border-y border-rule">
         {certifications.map(c => (

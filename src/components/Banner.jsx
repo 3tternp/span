@@ -6,7 +6,7 @@ export default function Banner() {
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center">
         <div>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] tracking-tight mb-5 max-w-2xl">
-            I help organisations pass their audits and catch real attacks.
+            I help organisations pass their audits and catch <span className="text-accent italic">real attacks</span>.
           </h1>
           <p className="font-serif text-xl md:text-[1.4rem] leading-snug text-ink/85 mb-5 max-w-xl">
             Prem Basnet &middot; Cybersecurity Manager and ISO 27001:2022 Lead Auditor, working in
@@ -19,7 +19,7 @@ export default function Banner() {
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
             <a href="/Prem-Basnet-CV.pdf" download
-              className="px-5 py-2.5 bg-accent text-white no-underline hover:bg-accent-dark transition-colors">
+              className="px-5 py-2.5 bg-accent text-on-accent no-underline hover:bg-accent-dark transition-colors">
               Download CV
             </a>
             <a href="mailto:basnetprem524@gmail.com" className="underline underline-offset-4 decoration-rule hover:decoration-ink">Email me</a>
@@ -30,13 +30,16 @@ export default function Banner() {
           </div>
         </div>
 
+        <div className="relative lg:ml-auto w-full max-w-sm">
+          <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 border border-accent" />
         <img
           src={headerImg}
           alt="Prem Basnet"
           width="500" height="625"
           fetchPriority="high"
-          className="w-full max-w-sm lg:ml-auto aspect-[4/5] object-cover object-top border border-rule"
+          className="relative w-full aspect-[4/5] object-cover object-top border border-rule bg-tint"
         />
+        </div>
       </div>
     </section>
   )
