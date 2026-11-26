@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
-import { Award } from 'lucide-react'
+import { Award, ExternalLink } from 'lucide-react'
 
+// Add a `url` (Credly badge, issuer verification page, credential PDF, ...) to any
+// entry and its card becomes a "Verify" link that opens in a new tab.
 const certifications = [
   { abbr: 'ISO 27001', name: 'ISO 27001:2022 Lead Auditor',              issuer: 'PECB / BSI',            category: 'Information Security Management'  },
   { abbr: 'CRTP',      name: 'CRTP – Certified Red Team Professional',   issuer: 'Altered Security',      category: 'Offensive Security / Red Teaming' },
@@ -50,15 +52,22 @@ export default function Certifications() {
 
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {certifications.map((cert, i) => (
-            <motion.div
+          {certifications.map((cert, i) => {
+            const Card = cert.url ? motion.a : motion.div
+            const linkProps = cert.url
+              ? { href: cert.url, target: '_blank', rel: 'noopener noreferrer',
+                  'aria-label': `Verify ${cert.name} (opens in a new tab)` }
+              : {}
+            return (
+            <Card
               key={i}
+              {...linkProps}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: i * 0.07, ease: 'easeOut' }}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="flex items-start gap-4 p-5 rounded-2xl border border-white/10
+              className="flex items-start gap-4 p-5 rounded-2xl border border-white/10 no-underline
                 transition-colors duration-300 hover:border-accent/40
                 hover:shadow-[0_12px_32px_rgba(0,255,157,0.15)]"
               style={{
@@ -81,9 +90,15 @@ export default function Certifications() {
                 <h4 className="text-[13px] font-semibold text-white leading-snug mb-1.5">{cert.name}</h4>
                 <span className="font-mono text-[12px] font-medium text-accent block mb-1">{cert.issuer}</span>
                 <span className="text-[10px] text-muted uppercase tracking-wide">{cert.category}</span>
+                {cert.url && (
+                  <span className="mt-2 flex items-center gap-1 font-mono text-[11px] text-accent-2">
+                    Verify credential <ExternalLink size={11} aria-hidden="true" />
+                  </span>
+                )}
               </div>
-            </motion.div>
-          ))}
+            </Card>
+            )
+          })}
         </div>
 
       </div>
