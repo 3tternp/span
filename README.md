@@ -58,10 +58,8 @@ Home → Skills → Experience → Certifications → Work → Contact
 | **Build tool** | [Vite 8](https://vite.dev/) |
 | **Framework** | [React 19](https://reactjs.org/) |
 | **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) (`@tailwindcss/vite`) |
-| **Animations** | [Framer Motion 14](https://www.framer.com/motion/) |
-| **Icons** | [Lucide React](https://lucide.dev/) |
 | **Contact Form** | [Formsubmit.co](https://formsubmit.co/) (zero-backend) |
-| **Custom Fonts** | CentraNo2 (local) — Bold · Medium · Book · JetBrains Mono (Google Fonts) |
+| **Fonts** | Newsreader (headings) · IBM Plex Sans (body), via Google Fonts |
 
 ---
 
@@ -113,21 +111,20 @@ span/
 │   └── thank-you.html          # Contact form success redirect
 ├── src/
 │   ├── components/
-│   │   ├── NavBar.jsx           # Fixed navigation · social icons · Hire Me CTA · mobile menu
-│   │   ├── Banner.jsx           # Hero · typewriter effect · stats · availability badge
-│   │   ├── Skills.jsx           # Three-column expertise grid with skill tags
+│   │   ├── NavBar.jsx           # Sticky navigation · scroll-spy · mobile menu
+│   │   ├── Section.jsx          # Shared section layout (title column + content)
+│   │   ├── Banner.jsx           # Hero · short bio · CV download
+│   │   ├── Skills.jsx           # Skill groups
 │   │   ├── Experience.jsx       # Career timeline + Education sidebar
 │   │   ├── Certifications.jsx   # 9 credentials in a 3-column grid
-│   │   ├── Projects.jsx         # Featured engagement cards with technology tags
-│   │   ├── ProjectCard.jsx      # Reusable project card with hover overlay
+│   │   ├── Projects.jsx         # Engagement types
 │   │   ├── Contact.jsx          # Formsubmit contact form
-│   │   └── Footer.jsx           # Footer · contact info · quick links · social
+│   │   └── Footer.jsx           # Footer links
 │   ├── assets/
-│   │   ├── img/                 # Hero image · logo · contact illustration
-│   │   └── font/                # CentraNo2 font files
+│   │   ├── img/                 # Hero photo
 │   ├── App.jsx                  # Root component
 │   ├── main.jsx                 # Entry point
-│   └── index.css                # Tailwind v4 import + design tokens + global styles
+│   └── index.css                # Tailwind v4 import + design tokens
 ├── index.html                   # Vite HTML entry with SEO meta tags
 ├── vite.config.mjs
 ├── netlify.toml, wrangler.toml  # Netlify / Cloudflare Pages deploy config
