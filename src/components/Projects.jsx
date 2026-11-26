@@ -1,4 +1,5 @@
 import Section from './Section.jsx'
+import WindowDots from './WindowDots.jsx'
 
 const projects = [
   {
@@ -40,31 +41,33 @@ const projects = [
 ]
 
 const TEAM = {
-  purple: { label: 'Governance',  dot: 'bg-accent'  },
-  red:    { label: 'Red team',    dot: 'bg-offense' },
-  blue:   { label: 'Blue team',   dot: 'bg-defense' },
+  purple: { label: 'Governance', cls: 'team-purple' },
+  red:    { label: 'Red team',   cls: 'team-red'    },
+  blue:   { label: 'Blue team',  cls: 'team-blue'   },
 }
 
 export default function Projects() {
   return (
-    <Section id="projects" title="How I can help"
+    <Section id="projects" label="Services" title="How I can help"
       intro="The kinds of work I take on, as an employee or as a consultant.">
-      <ol className="divide-y divide-rule border-y border-rule">
+      <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map(p => (
-          <li key={p.title} className="py-6">
-            <p className="flex items-center gap-2 text-[12px] font-medium uppercase tracking-wider text-muted mb-1">
-              <span aria-hidden="true" className={`w-2 h-2 rounded-full ${TEAM[p.team].dot}`} />
-              {TEAM[p.team].label}
-            </p>
-            <h3 className="font-serif text-xl leading-snug mb-1">{p.title}</h3>
-            <p className="text-[15px] mb-2 max-w-2xl">{p.description}</p>
-            <p className="text-[14px] text-muted">{p.tags.join(', ')}</p>
+          <li key={p.title} className={`glass p-6 flex flex-col ${TEAM[p.team].cls}`}>
+            <div className="flex items-center justify-between mb-5">
+              <WindowDots />
+              <span className="font-mono text-[11px] uppercase tracking-widest team-text">{TEAM[p.team].label}</span>
+            </div>
+            <h3 className="font-serif text-xl leading-snug mb-2">{p.title}</h3>
+            <p className="text-[15px] text-muted mb-4">{p.description}</p>
+            <ul className="flex flex-wrap gap-2 mt-auto" aria-label="Topics">
+              {p.tags.map(t => <li key={t} className="chip">{t}</li>)}
+            </ul>
           </li>
         ))}
       </ol>
-      <p className="mt-8">
+      <p className="mt-10 text-center">
         Have something like this on your plate?{' '}
-        <a href="#contact" className="underline underline-offset-4 decoration-accent hover:decoration-ink">Tell me about it</a>.
+        <a href="#contact" className="text-accent underline underline-offset-4">Tell me about it</a>.
       </p>
     </Section>
   )

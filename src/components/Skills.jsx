@@ -1,8 +1,9 @@
 import Section from './Section.jsx'
+import WindowDots from './WindowDots.jsx'
 
 const categories = [
   {
-    team: 'purple', label: 'Governance',
+    team: 'purple', label: 'Governance', path: 'governance',
     title: 'Governance, Risk & Compliance',
     desc: 'Navigating complex regulatory landscapes to build trust, reduce risk, and ensure business resilience.',
     skills: [
@@ -12,7 +13,7 @@ const categories = [
     ],
   },
   {
-    team: 'red', label: 'Red team',
+    team: 'red', label: 'Red team', path: 'red-team',
     title: 'Offensive Security & VAPT',
     desc: 'Identifying and exploiting vulnerabilities before adversaries do — strengthening defenses through real-world attack simulation.',
     skills: [
@@ -23,7 +24,7 @@ const categories = [
     ],
   },
   {
-    team: 'blue', label: 'Blue team',
+    team: 'blue', label: 'Blue team', path: 'blue-team',
     title: 'Infrastructure & Operations',
     desc: 'Securing and hardening enterprise infrastructure through proven frameworks, monitoring, and incident management.',
     skills: [
@@ -36,30 +37,27 @@ const categories = [
   },
 ]
 
-const TEAM = {
-  purple: 'border-accent text-accent',
-  red:    'border-offense text-offense',
-  blue:   'border-defense text-defense',
-}
+const TEAM_CLASS = { purple: 'team-purple', red: 'team-red', blue: 'team-blue' }
 
 export default function Skills() {
   return (
-    <Section id="skills" title="Skills" tint
-      intro="Offence, defence, and the governance that ties them together.">
-      <dl className="divide-y divide-rule border-y border-rule">
+    <Section id="skills" label="Skills &amp; abilities" title="Offence, defence and governance"
+      intro="Red team, blue team, and the governance that ties them together: that is where purple team work lives.">
+      <div className="grid lg:grid-cols-3 gap-6">
         {categories.map(c => (
-          <div key={c.title} className="py-6 grid md:grid-cols-[200px_1fr] gap-2 md:gap-8">
-            <dt className={`border-l-[3px] pl-3 ${TEAM[c.team]}`}>
-              <span className="block text-[12px] font-medium uppercase tracking-wider mb-1">{c.label}</span>
-              <span className="block font-serif text-xl leading-snug text-ink">{c.title}</span>
-            </dt>
-            <dd>
-              <p className="text-muted mb-3">{c.desc}</p>
-              <p className="text-[15px] leading-relaxed">{c.skills.join(' · ')}</p>
-            </dd>
-          </div>
+          <article key={c.title} className={`glass p-6 flex flex-col ${TEAM_CLASS[c.team]}`}>
+            <div className="flex items-center justify-between mb-5">
+              <WindowDots />
+              <span className="font-mono text-[11px] uppercase tracking-widest team-text">~/{c.path}</span>
+            </div>
+            <h3 className="font-serif text-2xl leading-snug mb-2">{c.title}</h3>
+            <p className="text-[15px] text-muted mb-5">{c.desc}</p>
+            <ul className="flex flex-wrap gap-2" aria-label={`${c.title} skills`}>
+              {c.skills.map(sk => <li key={sk} className="chip">{sk}</li>)}
+            </ul>
+          </article>
         ))}
-      </dl>
+      </div>
     </Section>
   )
 }

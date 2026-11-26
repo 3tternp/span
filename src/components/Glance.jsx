@@ -7,11 +7,11 @@ const facts = [
 
 export default function Glance() {
   return (
-    <section aria-label="At a glance" className="border-t border-rule bg-tint">
-      <dl className="max-w-6xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-6">
+    <section aria-label="At a glance" className="px-6">
+      <dl className="glass max-w-6xl mx-auto p-6 md:p-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-6">
         {facts.map(f => (
           <div key={f.label}>
-            <dt className="text-[13px] uppercase tracking-wider text-muted mb-1">{f.label}</dt>
+            <dt className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent mb-1.5">{f.label}</dt>
             <dd className="text-[15px] leading-snug">{f.value}</dd>
           </div>
         ))}
