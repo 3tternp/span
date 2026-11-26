@@ -3,7 +3,7 @@ import headerImg from '../assets/img/header-img.jpg'
 export default function Banner() {
   return (
     <section id="top" className="pt-14 pb-16 md:pt-20 md:pb-24">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-[1.4fr_1fr] gap-12 items-center">
+      <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center">
         <div>
           <p className="text-muted mb-4">Kathmandu, Nepal · open to remote work and consulting</p>
           <h1 className="font-serif text-5xl md:text-7xl leading-[1.05] tracking-tight mb-6">
@@ -33,9 +33,9 @@ export default function Banner() {
         <img
           src={headerImg}
           alt="Prem Basnet"
-          width="420"
+          width="500" height="625"
           fetchPriority="high"
-          className="w-full max-w-sm md:ml-auto border border-rule"
+          className="w-full max-w-sm lg:ml-auto aspect-[4/5] object-cover object-top border border-rule"
         />
       </div>
     </section>
