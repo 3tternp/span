@@ -26,7 +26,7 @@ A fully responsive, professional dark-themed portfolio website for **Prem Basnet
 
 | Domain | Details |
 |---|---|
-| **Current Role** | CSOC & SIEM Manager · Vairav Technology |
+| **Current Role** | Manager, SIEM & CSOC · Vairav Technology |
 | **IS Auditing & GRC** | ISO 27001, SOC 2, PCI DSS, HIPAA, GDPR, NIST, COBIT |
 | **Offensive Security** | VAPT, Penetration Testing, Red Teaming, API Security |
 | **Cloud Security** | AWS & Azure security audits and configuration reviews |
@@ -55,12 +55,11 @@ Home → Skills → Experience → Certifications → Work → Contact
 
 | Category | Technology |
 |---|---|
-| **Build tool** | [Vite 6](https://vitejs.dev/) |
+| **Build tool** | [Vite 8](https://vite.dev/) |
 | **Framework** | [React 19](https://reactjs.org/) |
 | **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) (`@tailwindcss/vite`) |
-| **Animations** | [Framer Motion 11](https://www.framer.com/motion/) |
+| **Animations** | [Framer Motion 14](https://www.framer.com/motion/) |
 | **Icons** | [Lucide React](https://lucide.dev/) |
-| **Routing** | [React Router v7](https://reactrouter.com/) + [React Router Hash Link](https://www.npmjs.com/package/react-router-hash-link) |
 | **Contact Form** | [Formsubmit.co](https://formsubmit.co/) (zero-backend) |
 | **Custom Fonts** | CentraNo2 (local) — Bold · Medium · Book · JetBrains Mono (Google Fonts) |
 
@@ -70,7 +69,7 @@ Home → Skills → Experience → Certifications → Work → Contact
 
 ### Prerequisites
 
-- **Node.js** 20+
+- **Node.js** 20.19+ (see `.nvmrc`)
 - **npm** 10+
 
 ### 1. Clone the repository
@@ -100,7 +99,7 @@ Runs at [http://localhost:5000](http://localhost:5000) with hot reload.
 npm run build
 ```
 
-Outputs optimized static files to `/dist/` — deploy to any static host (GitHub Pages, Netlify, Cloudflare Pages).
+Outputs optimized static files to `/dist/` (git-ignored) — deploy to any static host (Netlify and Cloudflare Pages configs are included).
 
 ---
 
@@ -110,6 +109,7 @@ Outputs optimized static files to `/dist/` — deploy to any static host (GitHub
 span/
 ├── public/
 │   ├── favicon.ico, logo192.png, logo512.png, manifest.json, robots.txt
+│   ├── Prem-Basnet-CV.pdf       # Downloadable CV
 │   └── thank-you.html          # Contact form success redirect
 ├── src/
 │   ├── components/
@@ -123,13 +123,14 @@ span/
 │   │   ├── Contact.jsx          # Formsubmit contact form
 │   │   └── Footer.jsx           # Footer · contact info · quick links · social
 │   ├── assets/
-│   │   ├── img/                 # Project images · logo
+│   │   ├── img/                 # Hero image · logo · contact illustration
 │   │   └── font/                # CentraNo2 font files
 │   ├── App.jsx                  # Root component
-│   ├── main.jsx                 # Entry point (BrowserRouter)
+│   ├── main.jsx                 # Entry point
 │   └── index.css                # Tailwind v4 import + design tokens + global styles
 ├── index.html                   # Vite HTML entry with SEO meta tags
-├── vite.config.js
+├── vite.config.mjs
+├── netlify.toml, wrangler.toml  # Netlify / Cloudflare Pages deploy config
 ├── CNAME                        # Custom domain: basnetprem.com.np
 └── package.json
 ```
